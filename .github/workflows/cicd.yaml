@@ -1,0 +1,76 @@
+name: OC Lettings CI/CD
+
+on:
+  push:
+    branches:
+      - master
+      - QA
+jobs:
+  build-and-test:
+    runs-on: debian_latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+    - name: Set up Python
+      uses: action/setup-python@v3
+      with:
+        python-version: '3.10'
+    - name: Install dependencies
+      run: | 
+            python -m pip install -upgrade pip
+            pip install -r requirements.txt
+
+    - name: Flake8 Linting
+      run : |
+            flake8 .
+
+    - name: run database migrations
+      run: |
+            python manage.py migrate
+
+    - name: Run test with coverage
+      run: |
+            pytest --cov=. --cov-fail-under=80
+
+  containerize:
+    runs-on: debian_latest
+    needs: build-and-test
+
+    steps:
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build and push Docker image
+      run: |
+        IMAGE_NAME=myryos/p13_082024
+        TAG=$(git rev-parse --short HEAD)
+        docker build -t $IMAGE_NAME:$TAG .
+        docker push $IMAGE_NAME:$TAG
+    - name: Run container locally
+      if: ${{ github.ref == 'refs/heads/master' }}
+      run: |
+        IMAGE_NAME=myryos/p13_082024
+        TAG=$(git rev-parse --short HEAD)
+        docker pull $IMAGE_NAME:$TAG
+        docker run -d -p 8000:8000 $IMAGE_NAME:$TAG
+
+
+  deploy:
+    runs-on: debian-latest
+    needs: containerize
+    if: github.ref == 'refs/heads/master'
+
+    steps:
+    - name: Deploy to Render
+      run: |
+        curl -X POST \
+        -H "Accept: application/json" \
+        -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+        https://api.render.com/v1/services/srv-cra3ed2j1k6c73bq7140/deploys
