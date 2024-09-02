@@ -82,13 +82,19 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": os.path.join(BASE_DIR, "oc-lettings-site.sqlite3"),
+        "TEST": {
+            "NAME": os.path.join(BASE_DIR, "test_oc_lettings_site.sqlite3"),
+        },
     }
 }
 
 if "DATABASE_URL" in os.environ:
     DATABASES["default"] = dj_database_url.config(
-        default="postgres://myryos:uEE0I5x1!@hostname:port/dbname"
+        default="postgresql://oc:WQvhyqOZbL59j1ndC2AgrisJdfytk0jg@dpg-craqgnbtq21c73cbnang-a/oc_lettings_site"
     )
+    DATABASES["default"]["TEST"] = {
+        "NAME": "test_dbname",
+    }
 
 
 # Password validation
