@@ -7,7 +7,7 @@ on:
       - QA
 jobs:
   build-and-test:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Code
@@ -34,7 +34,7 @@ jobs:
             pytest --cov=. --cov-fail-under=80
 
   containerize:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     needs: build-and-test
 
     steps:
@@ -63,7 +63,7 @@ jobs:
 
 
   deploy:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
     needs: containerize
     if: github.ref == 'refs/heads/master'
 
