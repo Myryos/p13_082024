@@ -1,5 +1,5 @@
 import os
-import dj_database_url
+# import dj_database_url
 
 import sentry_sdk
 
@@ -88,13 +88,13 @@ DATABASES = {
     }
 }
 
-PASSWORD = "WQvhyqOZbL59j1ndC2AgrisJdfytk0jg@dpg-craqgnbtq21c73cbnang-a"
-DATABASE_URL = f"postgresql://oc:{PASSWORD}/oc_lettings_site"
-if "DATABASE_URL" in os.environ:
-    DATABASES["default"] = dj_database_url.config(default=DATABASE_URL)
-    DATABASES["default"]["TEST"] = {
-        "NAME": "test_dbname",
-    }
+# PASSWORD = "WQvhyqOZbL59j1ndC2AgrisJdfytk0jg@dpg-craqgnbtq21c73cbnang-a"
+# DATABASE_URL = f"postgresql://oc:{PASSWORD}/oc_lettings_site"
+# if "DATABASE_URL" in os.environ:
+#    DATABASES["default"] = dj_database_url.config(default=DATABASE_URL)
+#    DATABASES["default"]["TEST"] = {
+#        "NAME": "test_dbname",
+#    }
 
 
 # Password validation
