@@ -49,7 +49,7 @@ jobs:
     - name: Build and push Docker image
       run: |
         IMAGE_NAME=myryos/p13_082024
-        TAG=$(git rev-parse --short HEAD)
+        TAG=$(echo "${{ github.sha }}" | cut -c1-7)
         docker build -t $IMAGE_NAME:$TAG .
         docker push $IMAGE_NAME:$TAG
     - name: Run container locally
