@@ -73,6 +73,6 @@ jobs:
     - name: Deploy to Render
       run: |
         curl -X POST \
-        -H "Accept: application/json" \
+        -H "Content-Type: application/json" \
         -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
-        https://api.render.com/v1/services/srv-cra3ed2j1k6c73bq7140/deploys
+        https://api.render.com/v1/services/srv-crdgorbtq21c73d475ag/deploys
