@@ -27,6 +27,9 @@ jobs:
     - name: run database migrations
       run: |
             python manage.py migrate
+    - name: Charge StaticFiles
+      run: |
+           python manage.py collectstatic
 
     - name: Run test with coverage
       run: |
