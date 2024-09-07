@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technologies et Langages &mdash; Documentation p13_082024 0.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=897fae25"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=041d0952"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Structure de la Base de Données" href="base_donnees.html" />
+    <link rel="prev" title="Guide de Démarrage Rapide" href="guide_demarrage_rapide.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            p13_082024
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="description_projet.html">Description du Projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Instructions d’Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_demarrage_rapide.html">Guide de Démarrage Rapide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Technologies et Langages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base_donnees.html">Structure de la Base de Données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_utilisation.html">Guide d’Utilisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deploiement.html">Déploiement et Gestion</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">p13_082024</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Technologies et Langages</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/technologies.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="technologies-et-langages">
+<h1>Technologies et Langages<a class="headerlink" href="#technologies-et-langages" title="Lien vers cette rubrique"></a></h1>
+<p>Le projet <strong>Orange County Lettings</strong> utilise une combinaison de technologies et de langages pour assurer le bon fonctionnement de l’application. Voici un aperçu des principales technologies et bibliothèques utilisées :</p>
+<p>### Langages de Programmation</p>
+<ul class="simple">
+<li><p><strong>Python</strong> : Le langage principal utilisé pour le développement du projet, version 3.6 ou supérieure.</p></li>
+</ul>
+<p>### Framework et Bibliothèques Principales</p>
+<ul class="simple">
+<li><p><strong>Django</strong> (version 5.1) : Framework web pour le développement de l’application.</p></li>
+<li><p><strong>Gunicorn</strong> (version 23.0.0) : Serveur WSGI pour servir l’application Django en production.</p></li>
+<li><p><strong>Whitenoise</strong> (version 6.7.0) : Pour servir les fichiers statiques dans Django en production.</p></li>
+</ul>
+<p>### Outils de Développement</p>
+<ul class="simple">
+<li><p><strong>ASGIRef</strong> (version 3.8.1) : Fournit des outils pour le support ASGI.</p></li>
+<li><p><strong>Black</strong> (version 24.8.0) : Outil de formatage automatique du code Python.</p></li>
+<li><p><strong>Flake8</strong> (version 7.1.1) : Outil pour le linting du code Python.</p></li>
+<li><p><strong>Mypy-Extensions</strong> (version 1.0.0) : Extensions pour Mypy, un vérificateur de types statiques pour Python.</p></li>
+<li><p><strong>Coverage</strong> (version 7.6.1) : Outil pour mesurer la couverture de code des tests.</p></li>
+</ul>
+<p>### Outils de Test</p>
+<ul class="simple">
+<li><p><strong>pytest</strong> (version 8.3.2) : Framework de test pour Python.</p></li>
+<li><p><strong>pytest-django</strong> (version 4.8.0) : Extensions pour tester des applications Django avec pytest.</p></li>
+<li><p><strong>pytest-cov</strong> (version 5.0.0) : Plugin pour mesurer la couverture des tests avec pytest.</p></li>
+<li><p><strong>pytest-mock</strong> (version 3.14.0) : Plugin pour intégrer le mocking avec pytest.</p></li>
+<li><p><strong>factory_boy</strong> (version 3.3.1) : Bibliothèque pour créer des objets de test.</p></li>
+</ul>
+<p>### Gestion des Dépendances et Environnements</p>
+<ul class="simple">
+<li><p><strong>django-environ</strong> (version 0.11.2) : Outil pour gérer les paramètres de configuration à partir des variables d’environnement.</p></li>
+<li><p><strong>dj-database-url</strong> (version 2.2.0) : Utilisé pour configurer les bases de données via une URL.</p></li>
+<li><p><strong>psycopg2-binary</strong> (version 2.9.9) : Connecteur PostgreSQL pour Django.</p></li>
+</ul>
+<p>### Autres Dépendances</p>
+<ul class="simple">
+<li><p><strong>sentry-sdk</strong> (version 2.13.0) : Intégration avec Sentry pour le suivi des erreurs et la surveillance.</p></li>
+<li><p><strong>Faker</strong> (version 28.1.0) : Bibliothèque pour générer des données factices.</p></li>
+<li><p><strong>certifi</strong> (version 2024.7.4) : Fournit des certificats CA pour des connexions sécurisées.</p></li>
+<li><p><strong>click</strong> (version 8.1.7) : Utilisé pour la gestion des commandes en ligne de commande.</p></li>
+<li><p><strong>entrypoints</strong> (version 0.4) : Outil pour les points d’entrée dans les paquets Python.</p></li>
+<li><p><strong>exceptiongroup</strong> (version 1.2.2) : Gère les groupes d’exceptions.</p></li>
+<li><p><strong>platformdirs</strong> (version 4.2.2) : Fournit des répertoires spécifiques à la plateforme pour les applications Python.</p></li>
+<li><p><strong>packaging</strong> (version 24.1) : Utilisé pour la gestion des versions et des dépendances.</p></li>
+</ul>
+<p>### Dépendances de Test et Développement</p>
+<ul class="simple">
+<li><p><strong>pycodestyle</strong> (version 2.12.1) : Outil de vérification de la conformité du code aux normes de style Python.</p></li>
+<li><p><strong>pyflakes</strong> (version 3.2.0) : Analyseur statique de code pour Python.</p></li>
+<li><p><strong>typing_extensions</strong> (version 4.12.2) : Extensions pour le système de types de Python.</p></li>
+</ul>
+<p>Ces outils et bibliothèques sont essentiels pour le développement, les tests, le déploiement et la maintenance de l’application. Assurez-vous de respecter les versions spécifiées pour garantir la compatibilité et la stabilité du projet.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="guide_demarrage_rapide.html" class="btn btn-neutral float-left" title="Guide de Démarrage Rapide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="base_donnees.html" class="btn btn-neutral float-right" title="Structure de la Base de Données" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, Herve Boutonnet.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
