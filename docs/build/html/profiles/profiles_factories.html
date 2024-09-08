@@ -22,7 +22,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="prev" title="Profiles URLs" href="profiles_urls.html" /> 
+    <link rel="prev" title="Profiles Tests" href="profiles_test.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -57,6 +57,7 @@
 <li class="toctree-l2"><a class="reference internal" href="profiles_models.html">Profiles Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiles_views.html">Profiles Views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiles_urls.html">Profiles URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles_test.html">Profiles Tests</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Profiles Factories</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#profiles.factories.UserFactory"><code class="docutils literal notranslate"><span class="pre">UserFactory</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#profiles.factories.UserFactory.email"><code class="docutils literal notranslate"><span class="pre">UserFactory.email</span></code></a></li>
@@ -118,14 +119,16 @@ avec un utilisateur associé généré par <cite>UserFactory</cite>.</p>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelFactory</span></code></p>
 <p>Factory pour le modèle <cite>User</cite>.</p>
 <p>Cette classe génère des instances de l’utilisateur Django par défaut.
-Chaque utilisateur créé a un nom d’utilisateur unique et
-une adresse email dérivée de ce nom d’utilisateur.</p>
+Chaque utilisateur créé a un nom d’utilisateur unique et une adresse
+email dérivée de ce nom d’utilisateur.</p>
 <p>Attributs :
-- <cite>username</cite> : Un nom d’utilisateur unique généré automatiquement.
-- <cite>first_name</cite> : Prénom de l’utilisateur, par défaut « John ».
-- <cite>last_name</cite> : Nom de famille de l’utilisateur, par défaut « Doe ».
-- <cite>email</cite> : Adresse email de l’utilisateur, générée
-automatiquement à partir du nom d’utilisateur.</p>
+- <strong>username</strong> : Un nom d’utilisateur unique généré automatiquement.
+- <strong>first_name</strong> : Prénom de l’utilisateur, par défaut « John ».
+- <strong>last_name</strong> : Nom de famille de l’utilisateur, par défaut « Doe ».
+- <strong>email</strong> : Adresse email de l’utilisateur, générée automatiquement à</p>
+<blockquote>
+<div><p>partir du nom d’utilisateur.</p>
+</div></blockquote>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="profiles.factories.UserFactory.email">
 <span class="sig-name descname"><span class="pre">email</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.LazyAttribute</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#profiles.factories.UserFactory.email" title="Lien vers cette définition"></a></dt>
@@ -153,11 +156,15 @@ automatiquement à partir du nom d’utilisateur.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profiles.factories.</span></span><span class="sig-name descname"><span class="pre">ProfileFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/profiles/factories.html#ProfileFactory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#profiles.factories.ProfileFactory" title="Lien vers cette définition"></a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelFactory</span></code></p>
 <p>Factory pour le modèle <cite>Profile</cite>.</p>
-<p>Cette classe génère des instances du modèle <cite>Profile</cite>, qui inclut un utilisateur associé
-généré par <cite>UserFactory</cite> et une ville favorite choisie de manière aléatoire.</p>
+<p>Cette classe génère des instances du modèle <cite>Profile</cite>, qui inclut un
+utilisateur associé généré par <cite>UserFactory</cite> et une ville favorite
+choisie de manière aléatoire.</p>
 <p>Attributs :
-- <cite>user</cite> : Une instance de <cite>User</cite> associée, générée par <cite>UserFactory</cite>.
-- <cite>favorite_city</cite> : Une ville favorite choisie aléatoirement à l’aide de Faker.</p>
+- <strong>user</strong> : Une instance de <cite>User</cite> associée, générée par <cite>UserFactory</cite>.
+- <strong>favorite_city</strong> : Une ville favorite choisie aléatoirement à l’aide</p>
+<blockquote>
+<div><p>de Faker.</p>
+</div></blockquote>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="profiles.factories.ProfileFactory.favorite_city">
 <span class="sig-name descname"><span class="pre">favorite_city</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.faker.Faker</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#profiles.factories.ProfileFactory.favorite_city" title="Lien vers cette définition"></a></dt>
@@ -176,7 +183,7 @@ généré par <cite>UserFactory</cite> et une ville favorite choisie de manière
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="profiles_urls.html" class="btn btn-neutral float-left" title="Profiles URLs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="profiles_test.html" class="btn btn-neutral float-left" title="Profiles Tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
 
   <hr/>

@@ -70,6 +70,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="profiles_views.html">Profiles Views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiles_urls.html">Profiles URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles_test.html">Profiles Tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiles_factories.html">Profiles Factories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiles_index.html#sections-disponibles">Sections disponibles</a></li>
 </ul>
@@ -114,20 +115,28 @@ pour inclure des informations supplémentaires spécifiques à l’application.<
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profiles.models.</span></span><span class="sig-name descname"><span class="pre">Profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/profiles/models.html#Profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#profiles.models.Profile" title="Lien vers cette définition"></a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
 <p>Modèle représentant un profil utilisateur.</p>
-<p>Ce modèle étend le modèle utilisateur de Django en ajoutant
-un champ pour la ville favorite de l’utilisateur.</p>
+<p>Ce modèle étend le modèle utilisateur de Django en ajoutant un champ pour
+la ville favorite de l’utilisateur.</p>
 <p>Attributs :
-- user (OneToOneField) : Une relation un-à-un avec le modèle <cite>User</cite>.
-Ce champ est obligatoire et sera supprimé si l’utilisateur associé
-est supprimé.
-- favorite_city (CharField) : Le nom de la ville favorite de l’utilisateur.
-Ce champ est optionnel et peut être laissé vide.</p>
+- <strong>user</strong> (<cite>OneToOneField</cite>) : Une relation un-à-un avec le modèle</p>
+<blockquote>
+<div><p><cite>User</cite>. Ce champ est obligatoire et sera supprimé si l’utilisateur
+associé est supprimé.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>favorite_city</strong> (<cite>CharField</cite>) : Le nom de la ville favorite de
+l’utilisateur. Ce champ est optionnel et peut être laissé vide.</p></li>
+</ul>
 <p>Méthodes :
-- __str__() : Retourne le nom d’utilisateur associé au profil comme
-représentation en chaîne de caractères du profil.</p>
+- <strong>__str__()</strong> : Retourne le nom d’utilisateur associé au profil comme</p>
+<blockquote>
+<div><p>représentation en chaîne de caractères du profil.</p>
+</div></blockquote>
 <p>Métadonnées :
-- db_table (str) : Nom de la table dans la base de données.
-Défini comme « oc_lettings_site_profile ».</p>
+- <strong>db_table</strong> (<cite>str</cite>) : Nom de la table dans la base de données. Défini</p>
+<blockquote>
+<div><p>comme « oc_lettings_site_profile ».</p>
+</div></blockquote>
 <dl class="py exception">
 <dt class="sig sig-object py" id="profiles.models.Profile.DoesNotExist">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#profiles.models.Profile.DoesNotExist" title="Lien vers cette définition"></a></dt>

@@ -2,13 +2,14 @@
 Factories pour les modèles Address et Letting.
 
 Ce fichier définit des classes de factory pour générer des instances des modèles
-`Address` et `Letting`
-à des fins de test. Ces factories utilisent le module `factory_boy` pour créer des objets avec des
-données réalistes, permettant ainsi de simplifier les tests unitaires et d'intégration.
+`Address` et `Letting` à des fins de test. Ces factories utilisent le module
+`factory_boy` pour créer des objets avec des données réalistes, permettant ainsi
+de simplifier les tests unitaires et d'intégration.
 
 Classes :
 - `AddressFactory` : Génère des instances du modèle `Address`.
-- `LettingFactory` : Génère des instances du modèle `Letting` avec une adresse associée.
+- `LettingFactory` : Génère des instances du modèle `Letting` avec une adresse
+  associée.
 """
 
 import factory
@@ -19,9 +20,9 @@ class AddressFactory(factory.django.DjangoModelFactory):
     """
     Factory pour le modèle `Address`.
 
-    Cette classe génère des instances du modèle `Address` avec des données réalistes
-    pour chaque champ, y compris le numéro de bâtiment, la rue, la ville, l'état,
-    le code postal, et le code pays (ISO).
+    Cette classe génère des instances du modèle `Address` avec des données
+    réalistes pour chaque champ, y compris le numéro de bâtiment, la rue, la
+    ville, l'état, le code postal, et le code pays (ISO).
 
     Attributs :
     - `number` : Numéro de bâtiment, généré par Faker.

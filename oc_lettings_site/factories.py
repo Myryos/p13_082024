@@ -3,14 +3,16 @@ Factories pour les modèles Address, Letting, User, et Profile.
 
 Ce fichier définit des classes de factory pour générer des instances des modèles
 `Address`, `Letting`, `User`, et `Profile` à des fins de test.
-Les factories simplifient la création d'objets avec des
-données réalistes et cohérentes pour les tests unitaires.
+Les factories simplifient la création d'objets avec des données réalistes
+et cohérentes pour les tests unitaires.
 
 Classes :
-- `AddressFactory` : Génère des instances du modèle `Address`.
-- `LettingFactory` : Génère des instances du modèle `Letting` avec une adresse associée.
-- `UserFactory` : Génère des instances du modèle `User`.
-- `ProfileFactory` : Génère des instances du modèle `Profile`, avec un utilisateur associé.
+- **AddressFactory** : Génère des instances du modèle `Address`.
+- **LettingFactory** : Génère des instances du modèle `Letting` avec une
+  adresse associée.
+- **UserFactory** : Génère des instances du modèle `User`.
+- **ProfileFactory** : Génère des instances du modèle `Profile`, avec un
+  utilisateur associé.
 """
 
 import factory
@@ -23,9 +25,9 @@ class AddressFactory(factory.django.DjangoModelFactory):
     """
     Factory pour le modèle `Address`.
 
-    Cette classe génère des instances du modèle `Address` avec des données réalistes
-    pour chaque champ, y compris le numéro de bâtiment, la rue, la ville, l'état,
-    le code postal et le code pays (ISO).
+    Cette classe génère des instances du modèle `Address` avec des données
+    réalistes pour chaque champ, y compris le numéro de bâtiment, la rue,
+    la ville, l'état, le code postal et le code pays (ISO).
 
     Attributs :
     - `number` : Numéro de bâtiment, généré par Faker.
@@ -70,8 +72,8 @@ class UserFactory(factory.django.DjangoModelFactory):
     """
     Factory pour le modèle `User`.
 
-    Cette classe génère des instances du modèle `User` avec un nom
-    d'utilisateur aléatoire généré par Faker.
+    Cette classe génère des instances du modèle `User` avec un nom d'utilisateur
+    aléatoire généré par Faker.
 
     Attributs :
     - `username` : Nom d'utilisateur, généré par Faker.

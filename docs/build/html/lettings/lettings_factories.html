@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lettings Factories &mdash; Documentation p13_082024 0.1.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=897fae25"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=041d0952"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            p13_082024
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../description_projet.html">Description du Projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Instructions d’Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide_demarrage_rapide.html">Guide de Démarrage Rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technologies.html">Technologies et Langages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base_donnees.html">Structure de la Base de Données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide_utilisation.html">Guide d’Utilisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deploiement.html">Déploiement et Gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../profiles/profiles_index.html">Gestion des Profils</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">p13_082024</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Lettings Factories</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/lettings/lettings_factories.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lettings-factories">
+<h1>Lettings Factories<a class="headerlink" href="#lettings-factories" title="Lien vers cette rubrique"></a></h1>
+<p>Ce module définit des classes de factory pour générer des instances des modèles
+<cite>Address</cite> et <cite>Letting</cite> à des fins de test. Les factories sont utilisées pour créer
+des objets de manière simple et cohérente dans les tests unitaires, en générant
+des données réalistes sans avoir à les créer manuellement.</p>
+<p>Classes :
+- <cite>AddressFactory</cite> : Génère des instances du modèle <cite>Address</cite>.
+- <cite>LettingFactory</cite> : Génère des instances du modèle <cite>Letting</cite>,
+avec une adresse associée générée par <cite>AddressFactory</cite>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="lettings.factories.AddressFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.factories.</span></span><span class="sig-name descname"><span class="pre">AddressFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lettings/factories.html#AddressFactory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.factories.AddressFactory" title="Lien vers cette définition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelFactory</span></code></p>
+<p>Factory pour le modèle <cite>Address</cite>.</p>
+<p>Cette classe génère des instances du modèle <cite>Address</cite> avec des données
+réalistes pour chaque champ, y compris le numéro de bâtiment, la rue, la
+ville, l’état, le code postal, et le code pays (ISO).</p>
+<p>Attributs :
+- <cite>number</cite> : Numéro de bâtiment, généré par Faker.
+- <cite>street</cite> : Nom de la rue, généré par Faker.
+- <cite>city</cite> : Nom de la ville, généré par Faker.
+- <cite>state</cite> : Abréviation de l’état, générée par Faker.
+- <cite>zip_code</cite> : Code postal, généré par Faker.
+- <cite>country_iso_code</cite> : Code ISO du pays, par défaut « USA ».</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.factories.AddressFactory.city">
+<span class="sig-name descname"><span class="pre">city</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.faker.Faker</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#lettings.factories.AddressFactory.city" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.factories.AddressFactory.country_iso_code">
+<span class="sig-name descname"><span class="pre">country_iso_code</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'USA'</span></em><a class="headerlink" href="#lettings.factories.AddressFactory.country_iso_code" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.factories.AddressFactory.number">
+<span class="sig-name descname"><span class="pre">number</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.faker.Faker</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#lettings.factories.AddressFactory.number" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.factories.AddressFactory.state">
+<span class="sig-name descname"><span class="pre">state</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.faker.Faker</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#lettings.factories.AddressFactory.state" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.factories.AddressFactory.street">
+<span class="sig-name descname"><span class="pre">street</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.faker.Faker</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#lettings.factories.AddressFactory.street" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.factories.AddressFactory.zip_code">
+<span class="sig-name descname"><span class="pre">zip_code</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.faker.Faker</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#lettings.factories.AddressFactory.zip_code" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="lettings.factories.LettingFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.factories.</span></span><span class="sig-name descname"><span class="pre">LettingFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lettings/factories.html#LettingFactory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.factories.LettingFactory" title="Lien vers cette définition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelFactory</span></code></p>
+<p>Factory pour le modèle <cite>Letting</cite>.</p>
+<p>Cette classe génère des instances du modèle <cite>Letting</cite>, qui inclut un titre
+généré aléatoirement et une adresse associée générée par <cite>AddressFactory</cite>.</p>
+<p>Attributs :
+- <cite>title</cite> : Titre de l’annonce, généré par Faker.
+- <cite>address</cite> : Instance d”<cite>Address</cite> associée, générée par <cite>AddressFactory</cite>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.factories.LettingFactory.address">
+<span class="sig-name descname"><span class="pre">address</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.SubFactory</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#lettings.factories.LettingFactory.address" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="lettings.factories.LettingFactory.title">
+<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.faker.Faker</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#lettings.factories.LettingFactory.title" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, Herve Boutonnet.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

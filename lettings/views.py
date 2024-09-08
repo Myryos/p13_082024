@@ -1,6 +1,4 @@
 """
-view.py
-
 Ce module contient les vues pour l'application de gestion des locations.
 
 Vues disponibles:
@@ -27,11 +25,11 @@ def index(request):
 
     Paramètres :
     - request (HttpRequest) : L'objet requête contenant les informations
-    sur la requête HTTP effectuée.
+      sur la requête HTTP effectuée.
 
     Retourne :
     - HttpResponse : Une réponse HTTP rendue à partir du modèle
-    `lettings/index.html`, contenant la liste des annonces de location.
+      `lettings/index.html`, contenant la liste des annonces de location.
     """
     lettings_list = Letting.objects.all()
     context = {"lettings_list": lettings_list}
@@ -63,13 +61,13 @@ def letting(request, letting_id):
 
     Paramètres :
     - request (HttpRequest) : L'objet requête contenant les informations
-    sur la requête HTTP effectuée.
+      sur la requête HTTP effectuée.
     - letting_id (int) : L'identifiant de l'annonce de location dont
-    les détails doivent être affichés.
+      les détails doivent être affichés.
 
     Retourne :
     - HttpResponse : Une réponse HTTP rendue à partir du modèle
-    `lettings/letting.html`, contenant les détails de l'annonce de location.
+      `lettings/letting.html`, contenant les détails de l'annonce de location.
     """
     letting = get_object_or_404(Letting, pk=letting_id)
     context = {

@@ -9,20 +9,21 @@ et profiles. Les tests sont réalisés à l'aide de `pytest` et `pytest-django`,
 et utilisent `factory_boy` pour générer des objets de test de manière réaliste.
 
 Vues testées :
-- `index` : Teste la page d'accueil principale de l'application.
-- `lettings_index` : Teste la vue qui affiche la liste des annonces de location.
-- `profiles_index` : Teste la vue qui affiche la liste des profils utilisateur.
+- **index** : Teste la page d'accueil principale de l'application.
+- **lettings_index** : Teste la vue qui affiche la liste des annonces de location.
+- **profiles_index** : Teste la vue qui affiche la liste des profils utilisateur.
 
 Les tests vérifient les aspects suivants :
 - La vue `index` est correctement rendue avec le template approprié et
-contient le contenu attendu.
+  contient le contenu attendu.
 - La vue `lettings_index` renvoie un code de statut 200 et affiche
-correctement les annonces de location disponibles.
+  correctement les annonces de location disponibles.
 - La vue `profiles_index` renvoie un code de statut 200 et affiche
-correctement les profils utilisateurs disponibles.
+  correctement les profils utilisateurs disponibles.
 - Les scénarios malheureux (`sad paths`) sont couverts, incluant les
-cas où aucune annonce ou aucun profil n'est disponible,
-ainsi que la gestion des routes non définies qui doivent renvoyer une erreur 404.
+  cas où aucune annonce ou aucun profil n'est disponible,
+  ainsi que la gestion des routes non définies qui doivent renvoyer une
+  erreur 404.
 """
 
 import pytest
@@ -33,8 +34,14 @@ from .factories import LettingFactory, ProfileFactory
 @pytest.mark.django_db
 def test_index_view_success(client):
     """
-    Teste la vue `index` pour vérifier que la page est correctement
-    rendue et renvoie un code de statut 200.
+    Teste la vue ``index`` pour vérifier que la page est correctement rendue
+    et renvoie un code de statut 200.
+
+    Cette fonction :
+    - Récupère l'URL pour la vue ``index``.
+    - Vérifie que la réponse a un code de statut 200.
+    - Vérifie que le template ``index.html`` est utilisé.
+    - Vérifie que le contenu attendu est présent dans la réponse.
     """
     url = reverse("index")
     response = client.get(url)
@@ -47,8 +54,14 @@ def test_index_view_success(client):
 @pytest.mark.django_db
 def test_letting_route(client):
     """
-    Teste la route `lettings_index` pour vérifier
-    qu'elle redirige correctement vers les URLs définies dans l'app 'lettings'.
+    Teste la route ``lettings_index`` pour vérifier qu'elle redirige
+    correctement vers les URLs définies dans l'app 'lettings'.
+
+    Cette fonction :
+    - Crée deux annonces de location avec ``factory_boy``.
+    - Récupère l'URL pour la vue ``lettings_index``.
+    - Vérifie que la réponse a un code de statut 200.
+    - Vérifie que le contenu attendu est présent dans la réponse.
     """
     LettingFactory.create_batch(2)  # Crée deux Lettings
     url = reverse("lettings_index")
@@ -61,8 +74,14 @@ def test_letting_route(client):
 @pytest.mark.django_db
 def test_profiles_route(client):
     """
-    Teste la route `profiles_index` pour vérifier
-    qu'elle redirige correctement vers les URLs définies dans l'app 'profiles'.
+    Teste la route ``profiles_index`` pour vérifier qu'elle redirige
+    correctement vers les URLs définies dans l'app 'profiles'.
+
+    Cette fonction :
+    - Crée deux profils avec ``factory_boy``.
+    - Récupère l'URL pour la vue ``profiles_index``.
+    - Vérifie que la réponse a un code de statut 200.
+    - Vérifie que le contenu attendu est présent dans la réponse.
     """
     ProfileFactory.create_batch(2)  # Crée deux Profiles
     url = reverse("profiles_index")
@@ -77,6 +96,11 @@ def test_not_found_route(client):
     """
     Teste une route non définie pour vérifier que le code de statut 404
     est renvoyé.
+
+    Cette fonction :
+    - Récupère l'URL pour une route inexistante.
+    - Vérifie que la réponse a un code de statut 404.
+    - Vérifie que le message d'erreur approprié est affiché.
     """
     message_search = "The page you were looking for could not be found."
     url = "/nonexistent_route/"
@@ -89,8 +113,13 @@ def test_not_found_route(client):
 @pytest.mark.django_db
 def test_letting_route_not_found(client):
     """
-    Teste la route `lettings_index` pour vérifier le comportement
+    Teste la route ``lettings_index`` pour vérifier le comportement
     lorsqu'aucune annonce de location n'est disponible.
+
+    Cette fonction :
+    - Récupère l'URL pour la vue ``lettings_index``.
+    - Vérifie que la réponse a un code de statut 200.
+    - Vérifie que le message indiquant l'absence d'annonces est affiché.
     """
     url = reverse("lettings_index")
     response = client.get(url)
@@ -102,8 +131,13 @@ def test_letting_route_not_found(client):
 @pytest.mark.django_db
 def test_profiles_route_empty(client):
     """
-    Teste la route `profiles_index` pour vérifier le comportement
+    Teste la route ``profiles_index`` pour vérifier le comportement
     lorsqu'aucun profil n'est disponible.
+
+    Cette fonction :
+    - Récupère l'URL pour la vue ``profiles_index``.
+    - Vérifie que la réponse a un code de statut 200.
+    - Vérifie que le message indiquant l'absence de profils est affiché.
     """
     url = reverse("profiles_index")
     response = client.get(url)

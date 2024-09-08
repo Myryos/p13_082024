@@ -2,9 +2,10 @@
 Tests des vues liées aux annonces de location.
 
 Ce module contient des tests unitaires pour vérifier le bon
-fonctionnement des vues associées aux annonces de location (`lettings`).
-Les tests sont réalisés à l'aide de `pytest` et `pytest-django`,
-et utilisent `factory_boy` pour générer des objets de test de manière réaliste.
+fonctionnement des vues associées aux annonces de location
+(`lettings`). Les tests sont réalisés à l'aide de `pytest` et
+`pytest-django`, et utilisent `factory_boy` pour générer des objets
+de test de manière réaliste.
 
 Vues testées :
 - `lettings_index` : Affiche la liste des annonces de location disponibles.
@@ -12,10 +13,10 @@ Vues testées :
 
 Les tests vérifient les aspects suivants :
 - La vue `lettings_index` affiche correctement la liste des annonces de
-location et traite le cas où aucune annonce n'est disponible
-(scénario de chemin malheureux).
+  location et traite le cas où aucune annonce n'est disponible
+  (scénario de chemin malheureux).
 - La vue `letting` affiche correctement les détails d'une annonce spécifique
-et gère les erreurs lorsque l'annonce demandée n'existe pas.
+  et gère les erreurs lorsque l'annonce demandée n'existe pas.
 """
 
 import pytest
