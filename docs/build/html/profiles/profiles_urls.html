@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vue d&#39;ensemble : code du module &mdash; Documentation p13_082024 0.1.0</title>
+  <title>Profiles URLs &mdash; Documentation p13_082024 0.1.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -20,7 +21,9 @@
         <script src="../_static/translations.js?v=041d0952"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Recherche" href="../search.html" /> 
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Profiles Factories" href="profiles_factories.html" />
+    <link rel="prev" title="Profiles Views" href="profiles_views.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,7 +46,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../description_projet.html">Description du Projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Instructions d’Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide_demarrage_rapide.html">Guide de Démarrage Rapide</a></li>
@@ -51,7 +54,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../base_donnees.html">Structure de la Base de Données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide_utilisation.html">Guide d’Utilisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deploiement.html">Déploiement et Gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../profiles/profiles_index.html">Gestion des Profils</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="profiles_index.html">Gestion des Profils</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="profiles_models.html">Profiles Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles_views.html">Profiles Views</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Profiles URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles_factories.html">Profiles Factories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles_index.html#sections-disponibles">Sections disponibles</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -68,8 +78,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Vue d'ensemble : code du module</li>
+          <li class="breadcrumb-item"><a href="profiles_index.html">Gestion des Profils</a></li>
+      <li class="breadcrumb-item active">Profiles URLs</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/profiles/profiles_urls.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -77,15 +89,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Modules pour lesquels le code est disponible</h1>
-<ul><li><a href="profiles/factories.html">profiles.factories</a></li>
-<li><a href="profiles/models.html">profiles.models</a></li>
-<li><a href="profiles/views.html">profiles.views</a></li>
-</ul>
+  <section id="profiles-urls">
+<h1>Profiles URLs<a class="headerlink" href="#profiles-urls" title="Lien vers cette rubrique"></a></h1>
+<p>Ce module définit les URL pour l’application de gestion des profils.</p>
+<p>Les URL suivantes sont disponibles :
+- / : Affiche la liste de tous les profils. (Nom de l’URL : <cite>profiles_index</cite>)
+- /&lt;username&gt;/ : Affiche les détails d’un profil spécifique basé sur le nom d’utilisateur. (Nom de l’URL : <cite>profile</cite>)</p>
+<p>Les vues associées sont définies dans le module <cite>views.py</cite>.</p>
+<p id="module-profiles.urls">urls.py</p>
+<p>Ce module définit les URL pour l’application de gestion des profils.</p>
+<p>Les URL suivantes sont disponibles :
+- / : Affiche la liste de tous les profils. (Nom de l’URL : “profiles_index”)
+- /&lt;username&gt;/ : Affiche les détails d’un profil spécifique basé
+sur le nom d’utilisateur. (Nom de l’URL : “profile”)</p>
+<p>Les vues associées sont définies dans le module <cite>views.py</cite>.</p>
+<p>Exemple d’utilisation des URL :
+- La route vide (“”) est associée à la vue <cite>index</cite> pour afficher
+la liste des profils.
+- La route avec un nom d’utilisateur (“&lt;str:username&gt;/”) est
+associée à la vue <cite>profile</cite> pour afficher les détails d’un profil spécifique.</p>
+</section>
+
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="profiles_views.html" class="btn btn-neutral float-left" title="Profiles Views" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="profiles_factories.html" class="btn btn-neutral float-right" title="Profiles Factories" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

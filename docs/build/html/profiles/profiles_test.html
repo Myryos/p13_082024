@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vue d&#39;ensemble : code du module &mdash; Documentation p13_082024 0.1.0</title>
+  <title>Profiles Tests &mdash; Documentation p13_082024 0.1.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
 
@@ -51,7 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../base_donnees.html">Structure de la Base de Données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide_utilisation.html">Guide d’Utilisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deploiement.html">Déploiement et Gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../profiles/profiles_index.html">Gestion des Profils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profiles_index.html">Gestion des Profils</a></li>
 </ul>
 
         </div>
@@ -68,8 +69,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Vue d'ensemble : code du module</li>
+      <li class="breadcrumb-item active">Profiles Tests</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/profiles/profiles_test.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -77,11 +79,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Modules pour lesquels le code est disponible</h1>
-<ul><li><a href="profiles/factories.html">profiles.factories</a></li>
-<li><a href="profiles/models.html">profiles.models</a></li>
-<li><a href="profiles/views.html">profiles.views</a></li>
-</ul>
+  <section id="profiles-tests">
+<h1>Profiles Tests<a class="headerlink" href="#profiles-tests" title="Lien vers cette rubrique"></a></h1>
+<p>Ce module contient des tests unitaires pour les vues définies dans <cite>views.py</cite> de l’application de gestion des profils. Les tests sont réalisés à l’aide de <cite>pytest</cite> et <cite>pytest-django</cite>.</p>
+<p>Les tests vérifient les aspects suivants :
+- La vue <cite>index</cite> rend correctement la liste des profils et affiche les données attendues.
+- La vue <cite>profile</cite> affiche les détails corrects pour un utilisateur spécifique et gère les cas où l’utilisateur n’existe pas.</p>
+</section>
+
 
            </div>
           </div>
