@@ -89,25 +89,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="profiles-urls">
-<h1>Profiles URLs<a class="headerlink" href="#profiles-urls" title="Lien vers cette rubrique"></a></h1>
+  <section id="module-profiles.urls">
+<span id="profiles-urls"></span><h1>Profiles URLs<a class="headerlink" href="#module-profiles.urls" title="Lien vers cette rubrique"></a></h1>
+<p>urls.py</p>
 <p>Ce module définit les URL pour l’application de gestion des profils.</p>
 <p>Les URL suivantes sont disponibles :
-- / : Affiche la liste de tous les profils. (Nom de l’URL : <cite>profiles_index</cite>)
-- /&lt;username&gt;/ : Affiche les détails d’un profil spécifique basé sur le nom d’utilisateur. (Nom de l’URL : <cite>profile</cite>)</p>
-<p>Les vues associées sont définies dans le module <cite>views.py</cite>.</p>
-<p id="module-profiles.urls">urls.py</p>
-<p>Ce module définit les URL pour l’application de gestion des profils.</p>
-<p>Les URL suivantes sont disponibles :
-- / : Affiche la liste de tous les profils. (Nom de l’URL : “profiles_index”)
-- /&lt;username&gt;/ : Affiche les détails d’un profil spécifique basé
-sur le nom d’utilisateur. (Nom de l’URL : “profile”)</p>
+- / : Affiche la liste de tous les profils. (Nom de l’URL : “profiles_index”)</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>/&lt;username&gt;/<span class="classifier">Affiche les détails d’un profil spécifique basé</span></dt><dd><p>sur le nom d’utilisateur. (Nom de l’URL : “profile”)</p>
+</dd>
+</dl>
+</li>
+</ul>
 <p>Les vues associées sont définies dans le module <cite>views.py</cite>.</p>
 <p>Exemple d’utilisation des URL :
-- La route vide (“”) est associée à la vue <cite>index</cite> pour afficher
-la liste des profils.
-- La route avec un nom d’utilisateur (“&lt;str:username&gt;/”) est
-associée à la vue <cite>profile</cite> pour afficher les détails d’un profil spécifique.</p>
+- La route vide (“”) est associée à la vue <cite>index</cite> pour afficher</p>
+<blockquote>
+<div><p>la liste des profils.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>La route avec un nom d’utilisateur (“&lt;str:username&gt;/”) est</p></li>
+</ul>
+<p>associée à la vue <cite>profile</cite> pour afficher les détails d’un profil spécifique.</p>
 </section>
 
 
