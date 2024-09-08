@@ -10,7 +10,7 @@ Bienvenue dans la documentation de l'application de gestion des profils. Cette s
    profiles_models
    profiles_views
    profiles_urls
-   profiles_tests
+   profiles_test
    profiles_factories
 
 Sections disponibles

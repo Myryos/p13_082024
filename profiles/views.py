@@ -4,9 +4,11 @@ views.py
 Ce module contient les vues pour l'application de gestion des profils.
 
 Vues disponibles:
+
     - index: Affiche la liste de tous les profils.
+
     - profile: Affiche les détails d'un profil spécifique
-    basé sur le nom d'utilisateur.
+               basé sur le nom d'utilisateur.
 """
 
 from django.shortcuts import render, get_object_or_404
