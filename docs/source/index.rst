@@ -16,6 +16,7 @@ Bienvenue dans la documentation officielle du site web d'Orange County Lettings.
    guide_utilisation
    deploiement
    profiles/profiles_index
+   lettings/lettings_index
 
 Indices et tables
 =================
