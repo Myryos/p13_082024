@@ -50,7 +50,16 @@
 <li class="toctree-l1"><a class="reference internal" href="description_projet.html">Description du Projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Instructions d’Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide_demarrage_rapide.html">Guide de Démarrage Rapide</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Technologies et Langages</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Technologies et Langages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#langages-de-programmation">Langages de Programmation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#framework-et-bibliotheques-principales">Framework et Bibliothèques Principales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outils-de-developpement">Outils de Développement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outils-de-test">Outils de Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gestion-des-dependances-et-environnements">Gestion des Dépendances et Environnements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autres-dependances">Autres Dépendances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependances-de-test-et-developpement">Dépendances de Test et Développement</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="base_donnees.html">Structure de la Base de Données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide_utilisation.html">Guide d’Utilisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deploiement.html">Déploiement et Gestion</a></li>
@@ -83,17 +92,22 @@
   <section id="technologies-et-langages">
 <h1>Technologies et Langages<a class="headerlink" href="#technologies-et-langages" title="Lien vers cette rubrique"></a></h1>
 <p>Le projet <strong>Orange County Lettings</strong> utilise une combinaison de technologies et de langages pour assurer le bon fonctionnement de l’application. Voici un aperçu des principales technologies et bibliothèques utilisées :</p>
-<p>### Langages de Programmation</p>
+<section id="langages-de-programmation">
+<h2>Langages de Programmation<a class="headerlink" href="#langages-de-programmation" title="Lien vers cette rubrique"></a></h2>
 <ul class="simple">
 <li><p><strong>Python</strong> : Le langage principal utilisé pour le développement du projet, version 3.6 ou supérieure.</p></li>
 </ul>
-<p>### Framework et Bibliothèques Principales</p>
+</section>
+<section id="framework-et-bibliotheques-principales">
+<h2>Framework et Bibliothèques Principales<a class="headerlink" href="#framework-et-bibliotheques-principales" title="Lien vers cette rubrique"></a></h2>
 <ul class="simple">
 <li><p><strong>Django</strong> (version 5.1) : Framework web pour le développement de l’application.</p></li>
 <li><p><strong>Gunicorn</strong> (version 23.0.0) : Serveur WSGI pour servir l’application Django en production.</p></li>
 <li><p><strong>Whitenoise</strong> (version 6.7.0) : Pour servir les fichiers statiques dans Django en production.</p></li>
 </ul>
-<p>### Outils de Développement</p>
+</section>
+<section id="outils-de-developpement">
+<h2>Outils de Développement<a class="headerlink" href="#outils-de-developpement" title="Lien vers cette rubrique"></a></h2>
 <ul class="simple">
 <li><p><strong>ASGIRef</strong> (version 3.8.1) : Fournit des outils pour le support ASGI.</p></li>
 <li><p><strong>Black</strong> (version 24.8.0) : Outil de formatage automatique du code Python.</p></li>
@@ -101,7 +115,9 @@
 <li><p><strong>Mypy-Extensions</strong> (version 1.0.0) : Extensions pour Mypy, un vérificateur de types statiques pour Python.</p></li>
 <li><p><strong>Coverage</strong> (version 7.6.1) : Outil pour mesurer la couverture de code des tests.</p></li>
 </ul>
-<p>### Outils de Test</p>
+</section>
+<section id="outils-de-test">
+<h2>Outils de Test<a class="headerlink" href="#outils-de-test" title="Lien vers cette rubrique"></a></h2>
 <ul class="simple">
 <li><p><strong>pytest</strong> (version 8.3.2) : Framework de test pour Python.</p></li>
 <li><p><strong>pytest-django</strong> (version 4.8.0) : Extensions pour tester des applications Django avec pytest.</p></li>
@@ -109,13 +125,17 @@
 <li><p><strong>pytest-mock</strong> (version 3.14.0) : Plugin pour intégrer le mocking avec pytest.</p></li>
 <li><p><strong>factory_boy</strong> (version 3.3.1) : Bibliothèque pour créer des objets de test.</p></li>
 </ul>
-<p>### Gestion des Dépendances et Environnements</p>
+</section>
+<section id="gestion-des-dependances-et-environnements">
+<h2>Gestion des Dépendances et Environnements<a class="headerlink" href="#gestion-des-dependances-et-environnements" title="Lien vers cette rubrique"></a></h2>
 <ul class="simple">
 <li><p><strong>django-environ</strong> (version 0.11.2) : Outil pour gérer les paramètres de configuration à partir des variables d’environnement.</p></li>
 <li><p><strong>dj-database-url</strong> (version 2.2.0) : Utilisé pour configurer les bases de données via une URL.</p></li>
 <li><p><strong>psycopg2-binary</strong> (version 2.9.9) : Connecteur PostgreSQL pour Django.</p></li>
 </ul>
-<p>### Autres Dépendances</p>
+</section>
+<section id="autres-dependances">
+<h2>Autres Dépendances<a class="headerlink" href="#autres-dependances" title="Lien vers cette rubrique"></a></h2>
 <ul class="simple">
 <li><p><strong>sentry-sdk</strong> (version 2.13.0) : Intégration avec Sentry pour le suivi des erreurs et la surveillance.</p></li>
 <li><p><strong>Faker</strong> (version 28.1.0) : Bibliothèque pour générer des données factices.</p></li>
@@ -126,13 +146,16 @@
 <li><p><strong>platformdirs</strong> (version 4.2.2) : Fournit des répertoires spécifiques à la plateforme pour les applications Python.</p></li>
 <li><p><strong>packaging</strong> (version 24.1) : Utilisé pour la gestion des versions et des dépendances.</p></li>
 </ul>
-<p>### Dépendances de Test et Développement</p>
+</section>
+<section id="dependances-de-test-et-developpement">
+<h2>Dépendances de Test et Développement<a class="headerlink" href="#dependances-de-test-et-developpement" title="Lien vers cette rubrique"></a></h2>
 <ul class="simple">
 <li><p><strong>pycodestyle</strong> (version 2.12.1) : Outil de vérification de la conformité du code aux normes de style Python.</p></li>
 <li><p><strong>pyflakes</strong> (version 3.2.0) : Analyseur statique de code pour Python.</p></li>
 <li><p><strong>typing_extensions</strong> (version 4.12.2) : Extensions pour le système de types de Python.</p></li>
 </ul>
 <p>Ces outils et bibliothèques sont essentiels pour le développement, les tests, le déploiement et la maintenance de l’application. Assurez-vous de respecter les versions spécifiées pour garantir la compatibilité et la stabilité du projet.</p>
+</section>
 </section>
 
 

@@ -48,7 +48,12 @@
               <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="description_projet.html">Description du Projet</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Instructions d’Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Instructions d’Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequis">Prérequis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#macos-linux">macOS / Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows">Windows</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="guide_demarrage_rapide.html">Guide de Démarrage Rapide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies et Langages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="base_donnees.html">Structure de la Base de Données</a></li>
@@ -83,50 +88,59 @@
   <section id="instructions-d-installation">
 <h1>Instructions d’Installation<a class="headerlink" href="#instructions-d-installation" title="Lien vers cette rubrique"></a></h1>
 <p>Pour installer et configurer le projet Django, suivez les étapes ci-dessous :</p>
-<p>#### Prérequis</p>
+<section id="prerequis">
+<h2>Prérequis<a class="headerlink" href="#prerequis" title="Lien vers cette rubrique"></a></h2>
 <ul class="simple">
 <li><p>Compte GitHub avec accès en lecture à ce repository</p></li>
 <li><p>Git CLI</p></li>
 <li><p>SQLite3 CLI</p></li>
 <li><p>Interpréteur Python, version 3.6 ou supérieure</p></li>
 </ul>
-<p>#### macOS / Linux</p>
-<ol class="arabic simple">
-<li><p><strong>Cloner le repository</strong> :
-<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>bash
-cd /path/to/put/project/in
-git clone <a class="reference external" href="https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git">https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git</a></p></li>
-<li><p><strong>Créer l’environnement virtuel</strong> :
-<code class="docutils literal notranslate"><span class="pre">`bash</span>
-<span class="pre">cd</span> <span class="pre">/path/to/Python-OC-Lettings-FR</span>
-<span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span>
-<span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-venv</span>&#160; <span class="pre">#</span> <span class="pre">Si</span> <span class="pre">nécessaire</span> <span class="pre">sur</span> <span class="pre">Ubuntu</span>
-<span class="pre">source</span> <span class="pre">venv/bin/activate</span>
-<span class="pre">which</span> <span class="pre">python</span>
-<span class="pre">python</span> <span class="pre">--version</span>
-<span class="pre">which</span> <span class="pre">pip</span>
-<span class="pre">`</span></code></p></li>
-<li><p><strong>Installer les dépendances</strong> :
-<code class="docutils literal notranslate"><span class="pre">`bash</span>
-<span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--requirement</span> <span class="pre">requirements.txt</span>
-<span class="pre">`</span></code></p></li>
-<li><p><strong>Configurer et exécuter le site</strong> :
-<code class="docutils literal notranslate"><span class="pre">`bash</span>
-<span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span>
-<span class="pre">`</span></code>
-Accédez à <a class="reference external" href="http://localhost:8000">http://localhost:8000</a> pour vérifier que le site fonctionne.</p></li>
-</ol>
-<p>#### Windows</p>
-<ol class="arabic simple">
-<li><dl class="simple">
-<dt><strong>Activer l’environnement virtuel</strong> :</dt><dd><p><code class="docutils literal notranslate"><span class="pre">`bash</span>
-<span class="pre">.\venv\Scripts\Activate.ps1</span>
-<span class="pre">`</span></code></p>
-</dd>
-</dl>
+</section>
+<section id="macos-linux">
+<h2>macOS / Linux<a class="headerlink" href="#macos-linux" title="Lien vers cette rubrique"></a></h2>
+<ol class="arabic">
+<li><p><strong>Cloner le repository</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/put/project/in
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git
+</pre></div>
+</div>
 </li>
-<li><p>Remplacer which &lt;my-command&gt; par (Get-Command &lt;my-command&gt;).Path</p></li>
+<li><p><strong>Créer l’environnement virtuel</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/path/to/Python-OC-Lettings-FR
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+apt-get<span class="w"> </span>install<span class="w"> </span>python3-venv<span class="w">  </span><span class="c1"># Si nécessaire sur Ubuntu</span>
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+which<span class="w"> </span>python
+python<span class="w"> </span>--version
+which<span class="w"> </span>pip
+</pre></div>
+</div>
+</li>
+<li><p><strong>Installer les dépendances</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--requirement<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</li>
+<li><p><strong>Configurer et exécuter le site</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+</div>
+<p>Accédez à <a class="reference external" href="http://localhost:8000">http://localhost:8000</a> pour vérifier que le site fonctionne.</p>
+</li>
 </ol>
+</section>
+<section id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Lien vers cette rubrique"></a></h2>
+<ol class="arabic">
+<li><p><strong>Activer l’environnement virtuel</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.<span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.ps1
+</pre></div>
+</div>
+</li>
+<li><p>Remplacer <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">&lt;my-command&gt;</span></code> par <code class="docutils literal notranslate"><span class="pre">(Get-Command</span> <span class="pre">&lt;my-command&gt;).Path</span></code>.</p></li>
+</ol>
+</section>
 </section>
 
 

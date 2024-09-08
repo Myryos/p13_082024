@@ -52,7 +52,20 @@
 <li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies et Langages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="base_donnees.html">Structure de la Base de Données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide_utilisation.html">Guide d’Utilisation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Déploiement et Gestion</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Déploiement et Gestion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pipeline-ci-cd">Pipeline CI/CD</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#declenchement-du-pipeline">Déclenchement du Pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#etapes-du-pipeline">Étapes du Pipeline</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#build-and-test">Build and Test</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#containerize">Containerize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deploy">Deploy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#etapes-de-deploiement-manuel">Étapes de Déploiement Manuel</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -82,52 +95,80 @@
   <section id="deploiement-et-gestion">
 <h1>Déploiement et Gestion<a class="headerlink" href="#deploiement-et-gestion" title="Lien vers cette rubrique"></a></h1>
 <p>Pour déployer l’application, vous pouvez soit suivre un processus manuel, soit utiliser le pipeline CI/CD configuré. Voici les détails pour les deux méthodes.</p>
-<p>### Pipeline CI/CD</p>
+<section id="pipeline-ci-cd">
+<h2>Pipeline CI/CD<a class="headerlink" href="#pipeline-ci-cd" title="Lien vers cette rubrique"></a></h2>
 <p>Le pipeline CI/CD automatisé pour le déploiement de <strong>Orange County Lettings</strong> est configuré avec GitHub Actions. Ce pipeline comprend plusieurs étapes, détaillées ci-dessous :</p>
-<ol class="arabic">
-<li><p><strong>Déclenchement du Pipeline</strong> :
-- Le pipeline se déclenche sur les branches <cite>master</cite> et <cite>QA</cite>.</p></li>
-<li><p><strong>Étapes du Pipeline</strong> :</p>
-<p>#### Build and Test
-- <strong>Checkout Code</strong> : Récupère le code source du repository.
-- <strong>Set up Python</strong> : Configure l’environnement Python avec la version spécifiée (3.10).
-- <strong>Install dependencies</strong> : Installe les dépendances requises via <cite>requirements.txt</cite>.
-- <strong>Flake8 Linting</strong> : Exécute l’outil de linting Flake8 pour vérifier le style du code.
-- <strong>Run database migrations</strong> : Exécute les migrations de la base de données.
-- <strong>Run test with coverage</strong> : Lance les tests avec couverture de code, échouant si la couverture est inférieure à 80%.</p>
-<p>#### Containerize
-- <strong>Set up Docker Buildx</strong> : Configure Docker Buildx pour la construction d’images Docker.
-- <strong>Log in to Docker Hub</strong> : Authentifie avec Docker Hub à l’aide des secrets de connexion.
-- <strong>Build and push Docker image</strong> : Construit et pousse l’image Docker vers Docker Hub avec un tag basé sur le SHA du commit et le tag <cite>latest</cite>.
-- <strong>Run container locally</strong> : Exécute le conteneur Docker localement si le déploiement se fait sur la branche <cite>master</cite>.</p>
-<p>#### Deploy
-- <strong>Deploy to Render</strong> : Déploie l’application sur Render en utilisant l’API de Render et les secrets de déploiement.</p>
-</li>
-</ol>
-<p>### Étapes de Déploiement Manuel</p>
+<section id="declenchement-du-pipeline">
+<h3>Déclenchement du Pipeline<a class="headerlink" href="#declenchement-du-pipeline" title="Lien vers cette rubrique"></a></h3>
+<ul class="simple">
+<li><p>Le pipeline se déclenche sur les branches <code class="docutils literal notranslate"><span class="pre">master</span></code> et <code class="docutils literal notranslate"><span class="pre">QA</span></code>.</p></li>
+</ul>
+</section>
+<section id="etapes-du-pipeline">
+<h3>Étapes du Pipeline<a class="headerlink" href="#etapes-du-pipeline" title="Lien vers cette rubrique"></a></h3>
+<section id="build-and-test">
+<h4>Build and Test<a class="headerlink" href="#build-and-test" title="Lien vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p><strong>Checkout Code</strong> : Récupère le code source du repository.</p></li>
+<li><p><strong>Set up Python</strong> : Configure l’environnement Python avec la version spécifiée (3.10).</p></li>
+<li><p><strong>Install dependencies</strong> : Installe les dépendances requises via <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>.</p></li>
+<li><p><strong>Flake8 Linting</strong> : Exécute l’outil de linting Flake8 pour vérifier le style du code.</p></li>
+<li><p><strong>Run database migrations</strong> : Exécute les migrations de la base de données.</p></li>
+<li><p><strong>Run test with coverage</strong> : Lance les tests avec couverture de code, échouant si la couverture est inférieure à 80 %.</p></li>
+</ul>
+</section>
+<section id="containerize">
+<h4>Containerize<a class="headerlink" href="#containerize" title="Lien vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p><strong>Set up Docker Buildx</strong> : Configure Docker Buildx pour la construction d’images Docker.</p></li>
+<li><p><strong>Log in to Docker Hub</strong> : Authentifie avec Docker Hub à l’aide des secrets de connexion.</p></li>
+<li><p><strong>Build and push Docker image</strong> : Construit et pousse l’image Docker vers Docker Hub avec un tag basé sur le SHA du commit et le tag <code class="docutils literal notranslate"><span class="pre">latest</span></code>.</p></li>
+<li><p><strong>Run container locally</strong> : Exécute le conteneur Docker localement si le déploiement se fait sur la branche <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p></li>
+</ul>
+</section>
+<section id="deploy">
+<h4>Deploy<a class="headerlink" href="#deploy" title="Lien vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p><strong>Deploy to Render</strong> : Déploie l’application sur Render en utilisant l’API de Render et les secrets de déploiement.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="etapes-de-deploiement-manuel">
+<h2>Étapes de Déploiement Manuel<a class="headerlink" href="#etapes-de-deploiement-manuel" title="Lien vers cette rubrique"></a></h2>
 <p>Pour déployer l’application manuellement, suivez ces étapes :</p>
-<ol class="arabic simple">
-<li><p><strong>Création de l’image Docker</strong> :
-<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>bash
-docker build -t &lt;votre_nom_d_utilisateur_dockerhub&gt;/oc-lettings:latest .</p></li>
-<li><dl class="simple">
-<dt><strong>Pousser l’image vers Docker Hub</strong> :</dt><dd><p><code class="docutils literal notranslate"><span class="pre">`bash</span>
-<span class="pre">docker</span> <span class="pre">login</span>
-<span class="pre">docker</span> <span class="pre">push</span> <span class="pre">&lt;votre_nom_d_utilisateur_dockerhub&gt;/oc-lettings:latest</span>
-<span class="pre">`</span></code></p>
-</dd>
-</dl>
+<ol class="arabic">
+<li><p><strong>Création de l’image Docker</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>&lt;votre_nom_d_utilisateur_dockerhub&gt;/oc-lettings:latest<span class="w"> </span>.
+</pre></div>
+</div>
 </li>
-<li><p><strong>Déployer sur Render</strong> :
-- Créez un nouveau service « Web Service » avec Docker sur Render.
-- Configurez le déploiement avec l’URL de votre image Docker Hub.
-- Configurez les variables d’environnement nécessaires (ex. DJANGO_SECRET_KEY, DATABASE_URL).</p></li>
-<li><p><strong>Vérification</strong> :
-- Accédez à l’URL fournie par Render pour vérifier le déploiement.</p></li>
-<li><p><strong>Mises à jour</strong> :
-- Créez une nouvelle image Docker et poussez-la vers Docker Hub.
-- Déclenchez un nouveau déploiement via Render ou via un pipeline CI/CD.</p></li>
+<li><p><strong>Pousser l’image vers Docker Hub</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>login
+docker<span class="w"> </span>push<span class="w"> </span>&lt;votre_nom_d_utilisateur_dockerhub&gt;/oc-lettings:latest
+</pre></div>
+</div>
+</li>
+<li><p><strong>Déployer sur Render</strong> :</p>
+<ul class="simple">
+<li><p>Créez un nouveau service « Web Service » avec Docker sur Render.</p></li>
+<li><p>Configurez le déploiement avec l’URL de votre image Docker Hub.</p></li>
+<li><p>Configurez les variables d’environnement nécessaires (ex. <code class="docutils literal notranslate"><span class="pre">DJANGO_SECRET_KEY</span></code>, <code class="docutils literal notranslate"><span class="pre">DATABASE_URL</span></code>).</p></li>
+</ul>
+</li>
+<li><p><strong>Vérification</strong> :</p>
+<ul class="simple">
+<li><p>Accédez à l’URL fournie par Render pour vérifier le déploiement.</p></li>
+</ul>
+</li>
+<li><p><strong>Mises à jour</strong> :</p>
+<ul class="simple">
+<li><p>Créez une nouvelle image Docker et poussez-la vers Docker Hub.</p></li>
+<li><p>Déclenchez un nouveau déploiement via Render ou via un pipeline CI/CD.</p></li>
+</ul>
+</li>
 </ol>
+</section>
 </section>
 
 

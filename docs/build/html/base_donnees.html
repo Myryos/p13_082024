@@ -51,7 +51,16 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Instructions d’Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="guide_demarrage_rapide.html">Guide de Démarrage Rapide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies et Langages</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Structure de la Base de Données</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Structure de la Base de Données</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modeles">Modèles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#address">Address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#letting">Letting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#profile">Profile</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#instructions-pour-explorer-la-base-de-donnees">Instructions pour Explorer la Base de Données</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="guide_utilisation.html">Guide d’Utilisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deploiement.html">Déploiement et Gestion</a></li>
 </ul>
@@ -83,9 +92,11 @@
   <section id="structure-de-la-base-de-donnees">
 <h1>Structure de la Base de Données<a class="headerlink" href="#structure-de-la-base-de-donnees" title="Lien vers cette rubrique"></a></h1>
 <p>Le projet <strong>Orange County Lettings</strong> utilise SQLite comme base de données pour le développement local. Voici une description des modèles de données ainsi que des instructions pour explorer et interagir avec la base de données.</p>
-<p>### Modèles</p>
-<p>#### Address</p>
-<p>Le modèle <cite>Address</cite> représente une adresse physique avec les champs suivants :
+<section id="modeles">
+<h2>Modèles<a class="headerlink" href="#modeles" title="Lien vers cette rubrique"></a></h2>
+<section id="address">
+<h3>Address<a class="headerlink" href="#address" title="Lien vers cette rubrique"></a></h3>
+<p>Le modèle <code class="docutils literal notranslate"><span class="pre">Address</span></code> représente une adresse physique avec les champs suivants :
 - <strong>number</strong> (PositiveIntegerField) : Numéro de la rue (valide jusqu’à 9999).
 - <strong>street</strong> (CharField) : Nom de la rue (64 caractères max).
 - <strong>city</strong> (CharField) : Nom de la ville (64 caractères max).
@@ -93,62 +104,64 @@
 - <strong>zip_code</strong> (PositiveIntegerField) : Code postal (max 99999).
 - <strong>country_iso_code</strong> (CharField) : Code ISO du pays (3 caractères).</p>
 <p><strong>Méthodes :</strong>
-- <cite>__str__()</cite> : Retourne une chaîne représentant l’adresse sous le format « numéro rue ».</p>
+- <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> : Retourne une chaîne représentant l’adresse sous le format « numéro rue ».</p>
 <p><strong>Métadonnées :</strong>
-- <cite>db_table</cite> : « oc_lettings_site_address »
-- <cite>verbose_name_plural</cite> : « Addresses »</p>
-<p>#### Letting</p>
-<p>Le modèle <cite>Letting</cite> représente une annonce de location avec les attributs suivants :
+- <code class="docutils literal notranslate"><span class="pre">db_table</span></code> : « oc_lettings_site_address »
+- <code class="docutils literal notranslate"><span class="pre">verbose_name_plural</span></code> : « Addresses »</p>
+</section>
+<section id="letting">
+<h3>Letting<a class="headerlink" href="#letting" title="Lien vers cette rubrique"></a></h3>
+<p>Le modèle <code class="docutils literal notranslate"><span class="pre">Letting</span></code> représente une annonce de location avec les attributs suivants :
 - <strong>title</strong> (CharField) : Titre de l’annonce (256 caractères max).
-- <strong>address</strong> (OneToOneField) : Relation un-à-un avec le modèle <cite>Address</cite>.</p>
+- <strong>address</strong> (OneToOneField) : Relation un-à-un avec le modèle <code class="docutils literal notranslate"><span class="pre">Address</span></code>.</p>
 <p><strong>Méthodes :</strong>
-- <cite>__str__()</cite> : Retourne le titre de l’annonce.</p>
+- <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> : Retourne le titre de l’annonce.</p>
 <p><strong>Métadonnées :</strong>
-- <cite>db_table</cite> : « oc_lettings_site_letting »</p>
-<p>#### Profile</p>
-<p>Le modèle <cite>Profile</cite> étend le modèle utilisateur de Django avec les champs suivants :
-- <strong>user</strong> (OneToOneField) : Relation un-à-un avec le modèle <cite>User</cite>.
+- <code class="docutils literal notranslate"><span class="pre">db_table</span></code> : « oc_lettings_site_letting »</p>
+</section>
+<section id="profile">
+<h3>Profile<a class="headerlink" href="#profile" title="Lien vers cette rubrique"></a></h3>
+<p>Le modèle <code class="docutils literal notranslate"><span class="pre">Profile</span></code> étend le modèle utilisateur de Django avec les champs suivants :
+- <strong>user</strong> (OneToOneField) : Relation un-à-un avec le modèle <code class="docutils literal notranslate"><span class="pre">User</span></code>.
 - <strong>favorite_city</strong> (CharField) : Ville favorite de l’utilisateur (64 caractères max, optionnel).</p>
 <p><strong>Méthodes :</strong>
-- <cite>__str__()</cite> : Retourne le nom d’utilisateur associé au profil.</p>
+- <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> : Retourne le nom d’utilisateur associé au profil.</p>
 <p><strong>Métadonnées :</strong>
-- <cite>db_table</cite> : « oc_lettings_site_profile »</p>
-<p>### Instructions pour Explorer la Base de Données</p>
+- <code class="docutils literal notranslate"><span class="pre">db_table</span></code> : « oc_lettings_site_profile »</p>
+</section>
+</section>
+<section id="instructions-pour-explorer-la-base-de-donnees">
+<h2>Instructions pour Explorer la Base de Données<a class="headerlink" href="#instructions-pour-explorer-la-base-de-donnees" title="Lien vers cette rubrique"></a></h2>
 <p>Pour explorer la base de données SQLite utilisée dans le projet, suivez ces étapes :</p>
-<ol class="arabic simple">
-<li><p><strong>Ouvrir une session shell SQLite</strong> :
-<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>bash
-sqlite3 oc-lettings-site.sqlite3</p></li>
-<li><dl class="simple">
-<dt><strong>Afficher les tables</strong> :</dt><dd><p><code class="docutils literal notranslate"><span class="pre">`sql</span>
-<span class="pre">.tables</span>
-<span class="pre">`</span></code></p>
-</dd>
-</dl>
+<ol class="arabic">
+<li><p><strong>Ouvrir une session shell SQLite</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sqlite3<span class="w"> </span>oc-lettings-site.sqlite3
+</pre></div>
+</div>
 </li>
-<li><dl class="simple">
-<dt><strong>Afficher les colonnes dans la table des profils</strong> :</dt><dd><p><code class="docutils literal notranslate"><span class="pre">`sql</span>
-<span class="pre">pragma</span> <span class="pre">table_info(Python-OC-Lettings-FR_profile);</span>
-<span class="pre">`</span></code></p>
-</dd>
-</dl>
+<li><p><strong>Afficher les tables</strong> :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="n">tables</span>
+</pre></div>
+</div>
 </li>
-<li><dl class="simple">
-<dt><a href="#id5"><span class="problematic" id="id6">**</span></a>Lancer une requête sur les profils ** :</dt><dd><p><code class="docutils literal notranslate"><span class="pre">`sql</span>
-<span class="pre">select</span> <span class="pre">user_id,</span> <span class="pre">favorite_city</span> <span class="pre">from</span> <span class="pre">Python-OC-Lettings-FR_profile</span> <span class="pre">where</span> <span class="pre">favorite_city</span> <span class="pre">like</span> <span class="pre">'B%';</span>
-<span class="pre">`</span></code></p>
-</dd>
-</dl>
+<li><p><strong>Afficher les colonnes dans la table des profils</strong> :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">pragma</span><span class="w"> </span><span class="n">table_info</span><span class="p">(</span><span class="n">Python</span><span class="o">-</span><span class="n">OC</span><span class="o">-</span><span class="n">Lettings</span><span class="o">-</span><span class="n">FR_profile</span><span class="p">);</span>
+</pre></div>
+</div>
 </li>
-<li><dl class="simple">
-<dt><strong>Quitter</strong> :</dt><dd><p><code class="docutils literal notranslate"><span class="pre">`sql</span>
-<span class="pre">.quit</span>
-<span class="pre">`</span></code></p>
-</dd>
-</dl>
+<li><p><strong>Lancer une requête sur les profils</strong> :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span><span class="w"> </span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="n">favorite_city</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Python</span><span class="o">-</span><span class="n">OC</span><span class="o">-</span><span class="n">Lettings</span><span class="o">-</span><span class="n">FR_profile</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">favorite_city</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;B%&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Quitter</strong> :</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="n">quit</span>
+</pre></div>
+</div>
 </li>
 </ol>
 <p>Ces instructions vous permettront d’interagir avec la base de données SQLite et d’explorer les tables et les données stockées.</p>
+</section>
 </section>
 
 
