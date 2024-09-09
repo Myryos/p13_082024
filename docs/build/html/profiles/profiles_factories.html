@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profiles Factories &mdash; Documentation p13_082024 0.1.0</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=897fae25"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=041d0952"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="prev" title="Profiles Tests" href="profiles_test.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            p13_082024
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../description_projet.html">Description du Projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Instructions d’Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide_demarrage_rapide.html">Guide de Démarrage Rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../technologies.html">Technologies et Langages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base_donnees.html">Structure de la Base de Données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide_utilisation.html">Guide d’Utilisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deploiement.html">Déploiement et Gestion</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="profiles_index.html">Gestion des Profils</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="profiles_models.html">Profiles Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles_views.html">Profiles Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles_urls.html">Profiles URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles_test.html">Profiles Tests</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Profiles Factories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#profiles.factories.UserFactory"><code class="docutils literal notranslate"><span class="pre">UserFactory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#profiles.factories.UserFactory.email"><code class="docutils literal notranslate"><span class="pre">UserFactory.email</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#profiles.factories.UserFactory.first_name"><code class="docutils literal notranslate"><span class="pre">UserFactory.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#profiles.factories.UserFactory.last_name"><code class="docutils literal notranslate"><span class="pre">UserFactory.last_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#profiles.factories.UserFactory.username"><code class="docutils literal notranslate"><span class="pre">UserFactory.username</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#profiles.factories.ProfileFactory"><code class="docutils literal notranslate"><span class="pre">ProfileFactory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#profiles.factories.ProfileFactory.favorite_city"><code class="docutils literal notranslate"><span class="pre">ProfileFactory.favorite_city</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#profiles.factories.ProfileFactory.user"><code class="docutils literal notranslate"><span class="pre">ProfileFactory.user</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="profiles_index.html#sections-disponibles">Sections disponibles</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">p13_082024</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="profiles_index.html">Gestion des Profils</a></li>
+      <li class="breadcrumb-item active">Profiles Factories</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/profiles/profiles_factories.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="profiles-factories">
+<h1>Profiles Factories<a class="headerlink" href="#profiles-factories" title="Lien vers cette rubrique"></a></h1>
+<p>Ce module définit des classes de factory pour générer des instances des modèles
+<cite>User</cite> et <cite>Profile</cite> à des fins de test. Les factories sont utilisées pour créer
+des objets de manière simple et cohérente dans les tests unitaires, en générant
+des données réalistes sans avoir à les créer manuellement.</p>
+<p>Classes :
+- <cite>UserFactory</cite> : Génère des instances du modèle <cite>User</cite>.
+- <cite>ProfileFactory</cite> : Génère des instances du modèle <cite>Profile</cite>,
+avec un utilisateur associé généré par <cite>UserFactory</cite>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="profiles.factories.UserFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profiles.factories.</span></span><span class="sig-name descname"><span class="pre">UserFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/profiles/factories.html#UserFactory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#profiles.factories.UserFactory" title="Lien vers cette définition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelFactory</span></code></p>
+<p>Factory pour le modèle <cite>User</cite>.</p>
+<p>Cette classe génère des instances de l’utilisateur Django par défaut.
+Chaque utilisateur créé a un nom d’utilisateur unique et une adresse
+email dérivée de ce nom d’utilisateur.</p>
+<p>Attributs :
+- <strong>username</strong> : Un nom d’utilisateur unique généré automatiquement.
+- <strong>first_name</strong> : Prénom de l’utilisateur, par défaut « John ».
+- <strong>last_name</strong> : Nom de famille de l’utilisateur, par défaut « Doe ».
+- <strong>email</strong> : Adresse email de l’utilisateur, générée automatiquement à</p>
+<blockquote>
+<div><p>partir du nom d’utilisateur.</p>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="profiles.factories.UserFactory.email">
+<span class="sig-name descname"><span class="pre">email</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.LazyAttribute</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#profiles.factories.UserFactory.email" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="profiles.factories.UserFactory.first_name">
+<span class="sig-name descname"><span class="pre">first_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'John'</span></em><a class="headerlink" href="#profiles.factories.UserFactory.first_name" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="profiles.factories.UserFactory.last_name">
+<span class="sig-name descname"><span class="pre">last_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Doe'</span></em><a class="headerlink" href="#profiles.factories.UserFactory.last_name" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="profiles.factories.UserFactory.username">
+<span class="sig-name descname"><span class="pre">username</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.Sequence</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#profiles.factories.UserFactory.username" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="profiles.factories.ProfileFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profiles.factories.</span></span><span class="sig-name descname"><span class="pre">ProfileFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/profiles/factories.html#ProfileFactory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#profiles.factories.ProfileFactory" title="Lien vers cette définition"></a></dt>
+<dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelFactory</span></code></p>
+<p>Factory pour le modèle <cite>Profile</cite>.</p>
+<p>Cette classe génère des instances du modèle <cite>Profile</cite>, qui inclut un
+utilisateur associé généré par <cite>UserFactory</cite> et une ville favorite
+choisie de manière aléatoire.</p>
+<p>Attributs :
+- <strong>user</strong> : Une instance de <cite>User</cite> associée, générée par <cite>UserFactory</cite>.
+- <strong>favorite_city</strong> : Une ville favorite choisie aléatoirement à l’aide</p>
+<blockquote>
+<div><p>de Faker.</p>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="profiles.factories.ProfileFactory.favorite_city">
+<span class="sig-name descname"><span class="pre">favorite_city</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.faker.Faker</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#profiles.factories.ProfileFactory.favorite_city" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="profiles.factories.ProfileFactory.user">
+<span class="sig-name descname"><span class="pre">user</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.SubFactory</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#profiles.factories.ProfileFactory.user" title="Lien vers cette définition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="profiles_test.html" class="btn btn-neutral float-left" title="Profiles Tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2024, Herve Boutonnet.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
