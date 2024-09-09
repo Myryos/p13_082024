@@ -12,7 +12,7 @@ les vues, les tests, et les factories.
    lettings_models
    lettings_views
    lettings_urls
-   lettings_tests
+   lettings_test
    lettings_factories
 
 Sections disponibles

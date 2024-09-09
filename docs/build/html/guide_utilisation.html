@@ -53,11 +53,24 @@
 <li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies et Langages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="base_donnees.html">Structure de la Base de Données</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Guide d’Utilisation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creer-un-nouvel-article">Créer un nouvel article</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#commenter-un-article">Commenter un article</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#naviguer-dans-l-application">Naviguer dans l’application</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#page-d-accueil">Page d’Accueil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liste-des-profils">Liste des Profils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#details-d-un-profil">Détails d’un Profil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liste-des-locations">Liste des Locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#details-d-une-annonce">Détails d’une Annonce</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#navigation-globale">Navigation Globale</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#footer">Footer</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="deploiement.html">Déploiement et Gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profiles/profiles_index.html">Gestion des Profils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lettings/lettings_index.html">Gestion des Annonces</a></li>
 </ul>
 
         </div>
@@ -86,22 +99,60 @@
              
   <section id="guide-d-utilisation">
 <h1>Guide d’Utilisation<a class="headerlink" href="#guide-d-utilisation" title="Lien vers cette rubrique"></a></h1>
-<p>Ce guide explique comment utiliser les fonctionnalités principales de l’application.</p>
-<section id="creer-un-nouvel-article">
-<h2>Créer un nouvel article<a class="headerlink" href="#creer-un-nouvel-article" title="Lien vers cette rubrique"></a></h2>
-<ol class="arabic simple">
-<li><p>Connectez-vous à l’application.</p></li>
-<li><p>Cliquez sur « Créer un nouvel article ».</p></li>
-<li><p>Remplissez les champs nécessaires et soumettez le formulaire.</p></li>
-</ol>
+<p>Bienvenue dans <strong>Orange County Lettings</strong>, une plateforme pour explorer les profils d’utilisateurs et les annonces de locations de vacances. Ce guide explique les fonctionnalités principales auxquelles vous avez accès en tant qu’utilisateur.</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
+<p>L’interface utilisateur est simple à naviguer avec deux principales sections :
+- <strong>Profiles</strong> : Liste des profils utilisateurs disponibles.
+- <strong>Lettings</strong> : Liste des annonces de location disponibles.</p>
+<p>Les utilisateurs peuvent consulter les détails des profils et des annonces en quelques clics.</p>
 </section>
-<section id="commenter-un-article">
-<h2>Commenter un article<a class="headerlink" href="#commenter-un-article" title="Lien vers cette rubrique"></a></h2>
-<ol class="arabic simple">
-<li><p>Accédez à un article.</p></li>
-<li><p>Faites défiler jusqu’à la section des commentaires.</p></li>
-<li><p>Ajoutez votre commentaire et cliquez sur « Soumettre ».</p></li>
-</ol>
+<section id="naviguer-dans-l-application">
+<h2>Naviguer dans l’application<a class="headerlink" href="#naviguer-dans-l-application" title="Lien vers cette rubrique"></a></h2>
+<section id="page-d-accueil">
+<h3>Page d’Accueil<a class="headerlink" href="#page-d-accueil" title="Lien vers cette rubrique"></a></h3>
+<p>Lorsque vous accédez à l’application, vous arrivez sur la <strong>page d’accueil</strong>. Elle vous accueille avec un message chaleureux et propose deux actions principales via des boutons :</p>
+<ul class="simple">
+<li><p><strong>Profiles</strong> : Accédez à la liste des profils utilisateurs.</p></li>
+<li><p><strong>Lettings</strong> : Accédez à la liste des annonces de location disponibles.</p></li>
+</ul>
+<p>Vous pouvez cliquer sur l’un des boutons pour explorer l’une des sections de l’application.</p>
+</section>
+<section id="liste-des-profils">
+<h3>Liste des Profils<a class="headerlink" href="#liste-des-profils" title="Lien vers cette rubrique"></a></h3>
+<p>En cliquant sur le bouton <strong>Profiles</strong> ou en naviguant directement à l’URL <cite>/profiles/</cite>, vous arriverez sur la page de <strong>liste des profils</strong>. Cette page affiche une liste de tous les utilisateurs inscrits avec un profil public. Chaque profil est cliquable et vous pouvez consulter les détails en cliquant sur le nom d’utilisateur.</p>
+<p>Si aucun profil n’est disponible, un message indiquant « No profiles are available » sera affiché.</p>
+</section>
+<section id="details-d-un-profil">
+<h3>Détails d’un Profil<a class="headerlink" href="#details-d-un-profil" title="Lien vers cette rubrique"></a></h3>
+<p>Lorsque vous sélectionnez un utilisateur, vous serez redirigé vers une page avec des informations détaillées sur le profil sélectionné, incluant :
+- Le <strong>prénom</strong> et <strong>nom de famille</strong>.
+- L”<strong>email</strong> de l’utilisateur.
+- La <strong>ville préférée</strong> de l’utilisateur.</p>
+<p>Vous avez également la possibilité de retourner à la liste des profils, aux annonces ou à la page d’accueil à l’aide des boutons fournis.</p>
+</section>
+<section id="liste-des-locations">
+<h3>Liste des Locations<a class="headerlink" href="#liste-des-locations" title="Lien vers cette rubrique"></a></h3>
+<p>En cliquant sur le bouton <strong>Lettings</strong> ou en naviguant à l’URL <cite>/lettings/</cite>, vous serez redirigé vers la <strong>liste des annonces de location</strong>. La page affiche les annonces de location disponibles. Chaque annonce est cliquable et vous redirige vers une page dédiée aux détails de cette annonce.</p>
+<p>Si aucune annonce n’est disponible, un message indiquant « No lettings are available » sera affiché.</p>
+</section>
+<section id="details-d-une-annonce">
+<h3>Détails d’une Annonce<a class="headerlink" href="#details-d-une-annonce" title="Lien vers cette rubrique"></a></h3>
+<p>Lorsque vous sélectionnez une annonce de location, vous accédez à une page détaillant l’annonce. Les informations incluent :
+- L”<strong>adresse complète</strong> : numéro, rue, ville, état, code postal, et code pays ISO.</p>
+<p>Sur cette page, vous pouvez retourner à la liste des annonces, aux profils ou à la page d’accueil via les boutons de navigation.</p>
+</section>
+</section>
+<section id="navigation-globale">
+<h2>Navigation Globale<a class="headerlink" href="#navigation-globale" title="Lien vers cette rubrique"></a></h2>
+<p>À tout moment, vous pouvez utiliser la barre de navigation située en haut de chaque page pour accéder rapidement à :
+- <strong>Home</strong> : Retourner à la page d’accueil.
+- <strong>Profiles</strong> : Voir la liste des profils.
+- <strong>Lettings</strong> : Voir la liste des annonces de location.</p>
+<section id="footer">
+<h3>Footer<a class="headerlink" href="#footer" title="Lien vers cette rubrique"></a></h3>
+<p>En bas de chaque page, vous trouverez un <strong>footer</strong> avec des liens supplémentaires pour consulter les politiques de confidentialité et les conditions d’utilisation du site.</p>
+</section>
 </section>
 </section>
 
