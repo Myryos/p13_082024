@@ -32,7 +32,7 @@ class Address(models.Model):
 
     Métadonnées :
     - db_table (str) : Nom de la table dans la base de données.
-    Défini comme "oc_lettings_site_address".
+    Défini comme "lettings_address".
     - verbose_name_plural (str) : Nom pluriel de l'objet utilisé dans
     l'interface d'administration. Défini comme "Addresses".
     """
@@ -74,12 +74,12 @@ class Address(models.Model):
         Attributs :
         - db_table (str) : Nom de la table dans la base de données qui
         sera utilisée pour stocker les instances du modèle.
-          Dans ce cas, la table est nommée "oc_lettings_site_address".
+          Dans ce cas, la table est nommée "lettings_address".
         - verbose_name_plural (str) : Nom pluriel de l'objet utilisé dans
         l'interface d'administration Django. Défini comme "Addresses".
         """
 
-        db_table = "oc_lettings_site_address"
+        db_table = "lettings_address"
         verbose_name_plural = "Addresses"
 
 
@@ -103,7 +103,7 @@ class Letting(models.Model):
 
     Métadonnées :
     - db_table (str) : Nom de la table dans la base de données.
-    Défini comme "oc_lettings_site_letting".
+    Défini comme "lettings_letting".
     """
 
     title = models.CharField(max_length=256)
@@ -136,7 +136,7 @@ class Letting(models.Model):
         Attributs :
         - db_table (str) : Nom de la table dans la base de données
         qui sera utilisée pour stocker les instances du modèle.
-          Dans ce cas, la table est nommée "oc_lettings_site_letting".
+          Dans ce cas, la table est nommée "lettings_letting".
         """
 
-        db_table = "oc_lettings_site_letting"
+        db_table = "lettings_letting"

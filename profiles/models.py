@@ -40,7 +40,7 @@ class Profile(models.Model):
     Défini comme "oc_lettings_site_profile".
     """
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     favorite_city = models.CharField(max_length=64, blank=True)
 
     def __str__(self):
@@ -75,4 +75,4 @@ class Profile(models.Model):
         Dans ce cas, la table est nommée "oc_lettings_site_profile".
         """
 
-        db_table = "oc_lettings_site_profile"
+        db_table = "profiles_profile"
