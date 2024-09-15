@@ -49,9 +49,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../guide_demarrage_rapide.html">Guide de Démarrage Rapide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technologies.html">Technologies et Langages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../base_donnees.html">Structure de la Base de Données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../profiles/profiles_index.html">Gestion des Profils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lettings/lettings_index.html">Gestion des Annonces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guide_utilisation.html">Guide d’Utilisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deploiement.html">Déploiement et Gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../profiles/profiles_index.html">Gestion des Profils</a></li>
 </ul>
 
         </div>
@@ -80,8 +81,10 @@
              
   <h1>Code source de lettings.models</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Ce module contient les modèles pour l&#39;application, incluant les définitions</span>
-<span class="sd">pour `Address` et `Letting`.</span>
+<span class="sd">models.py</span>
+
+<span class="sd">Ce module contient les modèles pour l&#39;application, incluant les définitions pour</span>
+<span class="sd">`Address` et `Letting`.</span>
 
 <span class="sd">- Address: Représente une adresse physique.</span>
 <span class="sd">- Letting: Représente une location, associée à une adresse.</span>
@@ -109,14 +112,13 @@
 <span class="sd">    - country_iso_code (CharField) : Code ISO du pays avec une longueur fixe de 3 caractères.</span>
 
 <span class="sd">    Méthodes :</span>
-<span class="sd">    - __str__() : Retourne une chaîne représentant l&#39;adresse sous le format</span>
-<span class="sd">      &quot;numéro rue&quot;.</span>
+<span class="sd">    - __str__() : Retourne une chaîne représentant l&#39;adresse sous le format &quot;numéro rue&quot;.</span>
 
 <span class="sd">    Métadonnées :</span>
-<span class="sd">    - db_table (str) : Nom de la table dans la base de données. Défini comme</span>
-<span class="sd">      &quot;oc_lettings_site_address&quot;.</span>
-<span class="sd">    - verbose_name_plural (str) : Nom pluriel de l&#39;objet utilisé dans l&#39;interface</span>
-<span class="sd">      d&#39;administration. Défini comme &quot;Addresses&quot;.</span>
+<span class="sd">    - db_table (str) : Nom de la table dans la base de données.</span>
+<span class="sd">    Défini comme &quot;lettings_address&quot;.</span>
+<span class="sd">    - verbose_name_plural (str) : Nom pluriel de l&#39;objet utilisé dans</span>
+<span class="sd">    l&#39;interface d&#39;administration. Défini comme &quot;Addresses&quot;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">number</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">(</span><span class="n">validators</span><span class="o">=</span><span class="p">[</span><span class="n">MaxValueValidator</span><span class="p">(</span><span class="mi">9999</span><span class="p">)])</span>
@@ -133,9 +135,10 @@
 <span class="sd">        Retourne une représentation en chaîne de caractères de l&#39;adresse.</span>
 
 <span class="sd">        Cette méthode renvoie une chaîne de caractères au format &quot;numéro rue&quot;,</span>
-<span class="sd">        ce qui permet de représenter l&#39;adresse de manière lisible et concise.</span>
-<span class="sd">        Cela facilite l&#39;affichage de l&#39;objet `Address` dans les interfaces</span>
-<span class="sd">        utilisateur et les interfaces d&#39;administration.</span>
+<span class="sd">        ce qui permet de représenter</span>
+<span class="sd">        l&#39;adresse de manière lisible et concise. Cela facilite l&#39;affichage de</span>
+<span class="sd">        l&#39;objet `Address` dans les</span>
+<span class="sd">        interfaces utilisateur et les interfaces d&#39;administration.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            str: Une chaîne représentant l&#39;adresse sous le format &quot;numéro rue&quot;.</span>
@@ -147,19 +150,20 @@
 <span class="sd">        Classe interne de configuration pour le modèle `Address`.</span>
 
 <span class="sd">        Cette classe interne `Meta` est utilisée pour définir des options de</span>
-<span class="sd">        métadonnées pour le modèle `Address`. Les options définies ici affectent</span>
-<span class="sd">        le comportement et la représentation du modèle dans la base de données et</span>
+<span class="sd">        métadonnées pour le modèle `Address`.</span>
+<span class="sd">        Les options définies ici affectent le comportement et</span>
+<span class="sd">        la représentation du modèle dans la base de données et</span>
 <span class="sd">        dans l&#39;interface d&#39;administration Django.</span>
 
 <span class="sd">        Attributs :</span>
-<span class="sd">        - db_table (str) : Nom de la table dans la base de données qui sera utilisée</span>
-<span class="sd">          pour stocker les instances du modèle. Dans ce cas, la table est nommée</span>
-<span class="sd">          &quot;oc_lettings_site_address&quot;.</span>
-<span class="sd">        - verbose_name_plural (str) : Nom pluriel de l&#39;objet utilisé dans l&#39;interface</span>
-<span class="sd">          d&#39;administration Django. Défini comme &quot;Addresses&quot;.</span>
+<span class="sd">        - db_table (str) : Nom de la table dans la base de données qui</span>
+<span class="sd">        sera utilisée pour stocker les instances du modèle.</span>
+<span class="sd">          Dans ce cas, la table est nommée &quot;lettings_address&quot;.</span>
+<span class="sd">        - verbose_name_plural (str) : Nom pluriel de l&#39;objet utilisé dans</span>
+<span class="sd">        l&#39;interface d&#39;administration Django. Défini comme &quot;Addresses&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="n">db_table</span> <span class="o">=</span> <span class="s2">&quot;oc_lettings_site_address&quot;</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s2">&quot;lettings_address&quot;</span>
         <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s2">&quot;Addresses&quot;</span></div>
 
 
@@ -170,21 +174,23 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Modèle représentant une annonce de location.</span>
 
-<span class="sd">    Ce modèle stocke les informations d&#39;une annonce de location, y compris</span>
-<span class="sd">    le titre de l&#39;annonce et l&#39;adresse associée.</span>
+<span class="sd">    Ce modèle stocke les informations d&#39;une annonce de location,</span>
+<span class="sd">    y compris le titre de l&#39;annonce et l&#39;adresse associée.</span>
 
 <span class="sd">    Attributs :</span>
-<span class="sd">    - title (CharField) : Titre de l&#39;annonce avec une longueur maximale de 256 caractères.</span>
-<span class="sd">    - address (OneToOneField) : Relation un-à-un avec le modèle `Address`. Cette</span>
-<span class="sd">      relation assure qu&#39;une annonce est associée à une seule adresse et vice versa.</span>
+<span class="sd">    - title (CharField) : Titre de l&#39;annonce avec une longueur maximale</span>
+<span class="sd">    de 256 caractères.</span>
+<span class="sd">    - address (OneToOneField) : Relation un-à-un avec le modèle `Address`.</span>
+<span class="sd">    Cette relation assure qu&#39;une annonce est associée à une seule adresse</span>
+<span class="sd">    et vice versa.</span>
 
 <span class="sd">    Méthodes :</span>
-<span class="sd">    - __str__() : Retourne le titre de l&#39;annonce comme représentation en chaîne de</span>
-<span class="sd">      caractères de l&#39;annonce.</span>
+<span class="sd">    - __str__() : Retourne le titre de l&#39;annonce comme représentation en chaîne</span>
+<span class="sd">    de caractères de l&#39;annonce.</span>
 
 <span class="sd">    Métadonnées :</span>
-<span class="sd">    - db_table (str) : Nom de la table dans la base de données. Défini comme</span>
-<span class="sd">      &quot;oc_lettings_site_letting&quot;.</span>
+<span class="sd">    - db_table (str) : Nom de la table dans la base de données.</span>
+<span class="sd">    Défini comme &quot;lettings_letting&quot;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">256</span><span class="p">)</span>
@@ -194,10 +200,10 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retourne une représentation en chaîne de caractères du modèle `Letting`.</span>
 
-<span class="sd">        Cette méthode renvoie le titre de l&#39;annonce, ce qui permet une représentation</span>
-<span class="sd">        lisible et identifiable de l&#39;objet `Letting` lorsque celui-ci est affiché</span>
-<span class="sd">        dans l&#39;interface Django admin ou dans les requêtes qui affichent des objets</span>
-<span class="sd">        `Letting`.</span>
+<span class="sd">        Cette méthode renvoie le titre de l&#39;annonce, ce qui permet</span>
+<span class="sd">        une représentation lisible et identifiable de l&#39;objet `Letting`</span>
+<span class="sd">        lorsque celui-ci est affiché dans l&#39;interface Django admin ou</span>
+<span class="sd">        dans les requêtes qui affichent des objets `Letting`.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            str: Le titre de l&#39;annonce.</span>
@@ -208,18 +214,19 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Classe interne de configuration pour le modèle `Letting`.</span>
 
-<span class="sd">        Cette classe interne `Meta` est utilisée pour définir des options de métadonnées</span>
-<span class="sd">        pour le modèle `Letting`. Les options définies ici affectent le comportement et</span>
-<span class="sd">        la représentation du modèle dans la base de données et dans l&#39;interface d&#39;administration</span>
-<span class="sd">        Django.</span>
+<span class="sd">        Cette classe interne `Meta` est utilisée pour définir</span>
+<span class="sd">        des options de métadonnées pour le modèle `Letting`.</span>
+<span class="sd">        Les options définies ici affectent le comportement</span>
+<span class="sd">        et la représentation du modèle dans la base de données et</span>
+<span class="sd">        dans l&#39;interface d&#39;administration Django.</span>
 
 <span class="sd">        Attributs :</span>
-<span class="sd">        - db_table (str) : Nom de la table dans la base de données qui sera utilisée</span>
-<span class="sd">          pour stocker les instances du modèle. Dans ce cas, la table est nommée</span>
-<span class="sd">          &quot;oc_lettings_site_letting&quot;.</span>
+<span class="sd">        - db_table (str) : Nom de la table dans la base de données</span>
+<span class="sd">        qui sera utilisée pour stocker les instances du modèle.</span>
+<span class="sd">          Dans ce cas, la table est nommée &quot;lettings_letting&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="n">db_table</span> <span class="o">=</span> <span class="s2">&quot;oc_lettings_site_letting&quot;</span></div>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s2">&quot;lettings_letting&quot;</span></div>
 
 </pre></div>
 

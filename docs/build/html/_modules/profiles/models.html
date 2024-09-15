@@ -49,9 +49,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../guide_demarrage_rapide.html">Guide de Démarrage Rapide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technologies.html">Technologies et Langages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../base_donnees.html">Structure de la Base de Données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../profiles/profiles_index.html">Gestion des Profils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lettings/lettings_index.html">Gestion des Annonces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guide_utilisation.html">Guide d’Utilisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deploiement.html">Déploiement et Gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../profiles/profiles_index.html">Gestion des Profils</a></li>
 </ul>
 
         </div>
@@ -82,16 +83,16 @@
 <span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">models.py</span>
 
-<span class="sd">Ce module contient les modèles de données pour l&#39;application de gestion des</span>
-<span class="sd">profils.</span>
+<span class="sd">Ce module contient les modèles de données pour l&#39;application de</span>
+<span class="sd">gestion des profils.</span>
 
 <span class="sd">Il définit les modèles suivants :</span>
-<span class="sd">- **Profile** : Représente un profil utilisateur, étendant le modèle de base</span>
-<span class="sd">  `User` pour inclure des informations supplémentaires spécifiques à</span>
-<span class="sd">  l&#39;application.</span>
+<span class="sd">- `Profile` : Représente un profil utilisateur,</span>
+<span class="sd">étendant le modèle de base `User` pour inclure des informations</span>
+<span class="sd">supplémentaires spécifiques à l&#39;application.</span>
 
-<span class="sd">Les modèles sont utilisés pour interagir avec la base de données et sont</span>
-<span class="sd">associés aux tables de la base de données via les options de métadonnées.</span>
+<span class="sd">Les modèles sont utilisés pour interagir avec la base de données</span>
+<span class="sd">et sont associés aux tables de la base de données via les options de métadonnées.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
@@ -104,41 +105,41 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Modèle représentant un profil utilisateur.</span>
 
-<span class="sd">    Ce modèle étend le modèle utilisateur de Django en ajoutant un champ pour</span>
-<span class="sd">    la ville favorite de l&#39;utilisateur.</span>
+<span class="sd">    Ce modèle étend le modèle utilisateur de Django en ajoutant</span>
+<span class="sd">    un champ pour la ville favorite de l&#39;utilisateur.</span>
 
 <span class="sd">    Attributs :</span>
-<span class="sd">    - **user** (`OneToOneField`) : Une relation un-à-un avec le modèle</span>
-<span class="sd">      `User`. Ce champ est obligatoire et sera supprimé si l&#39;utilisateur</span>
-<span class="sd">      associé est supprimé.</span>
-<span class="sd">    - **favorite_city** (`CharField`) : Le nom de la ville favorite de</span>
-<span class="sd">      l&#39;utilisateur. Ce champ est optionnel et peut être laissé vide.</span>
+<span class="sd">    - user (OneToOneField) : Une relation un-à-un avec le modèle `User`.</span>
+<span class="sd">    Ce champ est obligatoire et sera supprimé si l&#39;utilisateur associé</span>
+<span class="sd">    est supprimé.</span>
+<span class="sd">    - favorite_city (CharField) : Le nom de la ville favorite de l&#39;utilisateur.</span>
+<span class="sd">    Ce champ est optionnel et peut être laissé vide.</span>
 
 <span class="sd">    Méthodes :</span>
-<span class="sd">    - **__str__()** : Retourne le nom d&#39;utilisateur associé au profil comme</span>
-<span class="sd">      représentation en chaîne de caractères du profil.</span>
+<span class="sd">    - __str__() : Retourne le nom d&#39;utilisateur associé au profil comme</span>
+<span class="sd">    représentation en chaîne de caractères du profil.</span>
 
 <span class="sd">    Métadonnées :</span>
-<span class="sd">    - **db_table** (`str`) : Nom de la table dans la base de données. Défini</span>
-<span class="sd">      comme &quot;oc_lettings_site_profile&quot;.</span>
+<span class="sd">    - db_table (str) : Nom de la table dans la base de données.</span>
+<span class="sd">    Défini comme &quot;oc_lettings_site_profile&quot;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;profile&quot;</span><span class="p">)</span>
     <span class="n">favorite_city</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retourne une représentation en chaîne de caractères du profil utilisateur.</span>
 
-<span class="sd">        Cette méthode renvoie le nom d&#39;utilisateur associé au profil comme</span>
-<span class="sd">        une chaîne de caractères. Elle est utilisée pour afficher une</span>
-<span class="sd">        représentation lisible de l&#39;objet `Profile` dans les interfaces</span>
-<span class="sd">        administratives et autres contextes où une chaîne de caractères est</span>
-<span class="sd">        nécessaire.</span>
+<span class="sd">        Cette méthode renvoie le nom d&#39;utilisateur associé au profil</span>
+<span class="sd">        comme une chaîne de caractères. Elle est</span>
+<span class="sd">        utilisée pour afficher une représentation lisible de l&#39;objet `Profile`</span>
+<span class="sd">        dans les interfaces administratives</span>
+<span class="sd">        et autres contextes où une chaîne de caractères est nécessaire.</span>
 
 <span class="sd">        Retourne :</span>
-<span class="sd">        - **str** : Le nom d&#39;utilisateur du profil, qui est une représentation</span>
-<span class="sd">          textuelle de l&#39;objet `Profile`.</span>
+<span class="sd">        - str : Le nom d&#39;utilisateur du profil, qui est une</span>
+<span class="sd">        représentation textuelle de l&#39;objet `Profile`.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">username</span>
 
@@ -146,17 +147,19 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Classe interne de configuration pour le modèle `Profile`.</span>
 
-<span class="sd">        Cette classe interne `Meta` est utilisée pour définir des options de</span>
-<span class="sd">        métadonnées pour le modèle `Profile`. Les options définies ici affectent</span>
-<span class="sd">        le comportement et la représentation du modèle dans la base de données</span>
-<span class="sd">        et dans l&#39;interface d&#39;administration Django.</span>
+<span class="sd">        Cette classe interne `Meta` est utilisée pour définir des</span>
+<span class="sd">        options de métadonnées pour le modèle `Profile`.</span>
+<span class="sd">        Les options définies ici affectent le comportement et</span>
+<span class="sd">        la représentation du modèle dans la base de données et</span>
+<span class="sd">        dans l&#39;interface d&#39;administration Django.</span>
 
 <span class="sd">        Attributs :</span>
-<span class="sd">        - **db_table** (`str`) : Nom de la table dans la base de données qui sera</span>
-<span class="sd">          utilisée pour stocker les instances du modèle. Dans ce cas, la table</span>
-<span class="sd">          est nommée &quot;oc_lettings_site_profile&quot;.</span>
+<span class="sd">        - db_table (str) : Nom de la table dans la base de données</span>
+<span class="sd">        qui sera utilisée pour stocker les instances du modèle.</span>
+<span class="sd">        Dans ce cas, la table est nommée &quot;oc_lettings_site_profile&quot;.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">db_table</span> <span class="o">=</span> <span class="s2">&quot;oc_lettings_site_profile&quot;</span></div>
+
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s2">&quot;profiles_profile&quot;</span></div>
 
 </pre></div>
 

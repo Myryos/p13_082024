@@ -21,7 +21,9 @@
         <script src="../_static/translations.js?v=041d0952"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Recherche" href="../search.html" /> 
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Lettings URLs" href="lettings_urls.html" />
+    <link rel="prev" title="Lettings Models" href="lettings_models.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,15 +46,28 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../description_projet.html">Description du Projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Instructions d’Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide_demarrage_rapide.html">Guide de Démarrage Rapide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technologies.html">Technologies et Langages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base_donnees.html">Structure de la Base de Données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../profiles/profiles_index.html">Gestion des Profils</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="lettings_index.html">Gestion des Annonces</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lettings_models.html">Lettings Models</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lettings Views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lettings.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lettings.views.letting"><code class="docutils literal notranslate"><span class="pre">letting()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lettings_urls.html">Lettings URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lettings_test.html">Lettings Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lettings_factories.html">Lettings Factories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lettings_index.html#sections-disponibles">Sections disponibles</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../guide_utilisation.html">Guide d’Utilisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deploiement.html">Déploiement et Gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../profiles/profiles_index.html">Gestion des Profils</a></li>
 </ul>
 
         </div>
@@ -69,6 +84,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="lettings_index.html">Gestion des Annonces</a></li>
       <li class="breadcrumb-item active">Lettings Views</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/lettings/lettings_views.rst.txt" rel="nofollow"> Afficher la source de la page</a>
@@ -82,7 +98,8 @@
   <section id="lettings-views">
 <h1>Lettings Views<a class="headerlink" href="#lettings-views" title="Lien vers cette rubrique"></a></h1>
 <p>Ce module contient les vues pour l’application de gestion des annonces de location.</p>
-<p id="module-lettings.views">Ce module contient les vues pour l’application de gestion des locations.</p>
+<p id="module-lettings.views">view.py</p>
+<p>Ce module contient les vues pour l’application de gestion des locations.</p>
 <dl class="simple">
 <dt>Vues disponibles:</dt><dd><ul class="simple">
 <li><p>lettings_index: Affiche la liste des locations.</p></li>
@@ -99,15 +116,11 @@ la base de données et les passe au modèle
 <cite>lettings/index.html</cite> pour les afficher. La liste des annonces
 est envoyée dans le contexte sous la clé <cite>lettings_list</cite>.</p>
 <p>Paramètres :
-- request (HttpRequest) : L’objet requête contenant les informations</p>
-<blockquote>
-<div><p>sur la requête HTTP effectuée.</p>
-</div></blockquote>
+- request (HttpRequest) : L’objet requête contenant les informations
+sur la requête HTTP effectuée.</p>
 <p>Retourne :
-- HttpResponse : Une réponse HTTP rendue à partir du modèle</p>
-<blockquote>
-<div><p><cite>lettings/index.html</cite>, contenant la liste des annonces de location.</p>
-</div></blockquote>
+- HttpResponse : Une réponse HTTP rendue à partir du modèle
+<cite>lettings/index.html</cite>, contenant la liste des annonces de location.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -120,19 +133,13 @@ détails de cette annonce au modèle <cite>lettings/letting.html</cite>
 pour les afficher. Les informations de l’annonce
 sont envoyées dans le contexte sous les clés <cite>title</cite> et <cite>address</cite>.</p>
 <p>Paramètres :
-- request (HttpRequest) : L’objet requête contenant les informations</p>
-<blockquote>
-<div><p>sur la requête HTTP effectuée.</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>letting_id (int) : L’identifiant de l’annonce de location dont
-les détails doivent être affichés.</p></li>
-</ul>
+- request (HttpRequest) : L’objet requête contenant les informations
+sur la requête HTTP effectuée.
+- letting_id (int) : L’identifiant de l’annonce de location dont
+les détails doivent être affichés.</p>
 <p>Retourne :
-- HttpResponse : Une réponse HTTP rendue à partir du modèle</p>
-<blockquote>
-<div><p><cite>lettings/letting.html</cite>, contenant les détails de l’annonce de location.</p>
-</div></blockquote>
+- HttpResponse : Une réponse HTTP rendue à partir du modèle
+<cite>lettings/letting.html</cite>, contenant les détails de l’annonce de location.</p>
 </dd></dl>
 
 </section>
@@ -140,7 +147,10 @@ les détails doivent être affichés.</p></li>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="lettings_models.html" class="btn btn-neutral float-left" title="Lettings Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="lettings_urls.html" class="btn btn-neutral float-right" title="Lettings URLs" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

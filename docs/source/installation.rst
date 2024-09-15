@@ -20,7 +20,7 @@ macOS / Linux
    .. code-block:: bash
 
       cd /path/to/put/project/in
-      git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git
+      git clone https://github.com/Myryos/p13_082024.git
 
 2. **Créer l'environnement virtuel** :
 

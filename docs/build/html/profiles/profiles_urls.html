@@ -22,7 +22,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Profiles Factories" href="profiles_factories.html" />
+    <link rel="next" title="Profiles Tests" href="profiles_test.html" />
     <link rel="prev" title="Profiles Views" href="profiles_views.html" /> 
 </head>
 
@@ -52,16 +52,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../guide_demarrage_rapide.html">Guide de Démarrage Rapide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technologies.html">Technologies et Langages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base_donnees.html">Structure de la Base de Données</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../guide_utilisation.html">Guide d’Utilisation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../deploiement.html">Déploiement et Gestion</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="profiles_index.html">Gestion des Profils</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="profiles_models.html">Profiles Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiles_views.html">Profiles Views</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Profiles URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiles_test.html">Profiles Tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiles_factories.html">Profiles Factories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiles_index.html#sections-disponibles">Sections disponibles</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../lettings/lettings_index.html">Gestion des Annonces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guide_utilisation.html">Guide d’Utilisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deploiement.html">Déploiement et Gestion</a></li>
 </ul>
 
         </div>
@@ -91,24 +93,18 @@
              
   <section id="module-profiles.urls">
 <span id="profiles-urls"></span><h1>Profiles URLs<a class="headerlink" href="#module-profiles.urls" title="Lien vers cette rubrique"></a></h1>
-<p>URLs pour l’application de gestion des profils.</p>
-<p>Ce module définit les URL disponibles pour l’application de gestion des
-profils.</p>
-<p>Les URL définies dans ce module sont les suivantes :</p>
-<ul class="simple">
-<li><p><strong>/ (Nom de l’URL : “profiles_index”)</strong>
-Affiche la liste de tous les profils.</p></li>
-<li><p><strong>/&lt;username&gt;/ (Nom de l’URL : “profile”)</strong>
-Affiche les détails d’un profil spécifique basé sur le nom d’utilisateur.</p></li>
-</ul>
-<p>Les vues associées à ces URL sont définies dans le module <cite>views.py</cite>.</p>
-<p>Exemple d’utilisation des URL :</p>
-<ul class="simple">
-<li><p>La route vide (“”) est associée à la vue <cite>index</cite> pour afficher la liste
-des profils.</p></li>
-<li><p>La route avec un nom d’utilisateur (“&lt;str:username&gt;/”) est associée à
-la vue <cite>profile</cite> pour afficher les détails d’un profil spécifique.</p></li>
-</ul>
+<p>urls.py</p>
+<p>Ce module définit les URL pour l’application de gestion des profils.</p>
+<p>Les URL suivantes sont disponibles :
+- / : Affiche la liste de tous les profils. (Nom de l’URL : “profiles_index”)
+- /&lt;username&gt;/ : Affiche les détails d’un profil spécifique basé
+sur le nom d’utilisateur. (Nom de l’URL : “profile”)</p>
+<p>Les vues associées sont définies dans le module <cite>views.py</cite>.</p>
+<p>Exemple d’utilisation des URL :
+- La route vide (“”) est associée à la vue <cite>index</cite> pour afficher
+la liste des profils.
+- La route avec un nom d’utilisateur (“&lt;str:username&gt;/”) est
+associée à la vue <cite>profile</cite> pour afficher les détails d’un profil spécifique.</p>
 </section>
 
 
@@ -116,7 +112,7 @@ la vue <cite>profile</cite> pour afficher les détails d’un profil spécifique
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="profiles_views.html" class="btn btn-neutral float-left" title="Profiles Views" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="profiles_factories.html" class="btn btn-neutral float-right" title="Profiles Factories" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="profiles_test.html" class="btn btn-neutral float-right" title="Profiles Tests" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -21,7 +21,9 @@
         <script src="../_static/translations.js?v=041d0952"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Recherche" href="../search.html" /> 
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Lettings Views" href="lettings_views.html" />
+    <link rel="prev" title="Gestion des Annonces" href="lettings_index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,15 +46,50 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Table des matières:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../description_projet.html">Description du Projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Instructions d’Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../guide_demarrage_rapide.html">Guide de Démarrage Rapide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../technologies.html">Technologies et Langages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base_donnees.html">Structure de la Base de Données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../profiles/profiles_index.html">Gestion des Profils</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="lettings_index.html">Gestion des Annonces</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Lettings Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lettings.models.Address"><code class="docutils literal notranslate"><span class="pre">Address</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Address.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Address.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Address.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Address.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Address.city"><code class="docutils literal notranslate"><span class="pre">Address.city</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Address.country_iso_code"><code class="docutils literal notranslate"><span class="pre">Address.country_iso_code</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Address.id"><code class="docutils literal notranslate"><span class="pre">Address.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Address.letting"><code class="docutils literal notranslate"><span class="pre">Address.letting</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Address.number"><code class="docutils literal notranslate"><span class="pre">Address.number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Address.objects"><code class="docutils literal notranslate"><span class="pre">Address.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Address.state"><code class="docutils literal notranslate"><span class="pre">Address.state</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Address.street"><code class="docutils literal notranslate"><span class="pre">Address.street</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Address.zip_code"><code class="docutils literal notranslate"><span class="pre">Address.zip_code</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#lettings.models.Letting"><code class="docutils literal notranslate"><span class="pre">Letting</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Letting.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Letting.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Letting.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Letting.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Letting.address"><code class="docutils literal notranslate"><span class="pre">Letting.address</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Letting.address_id"><code class="docutils literal notranslate"><span class="pre">Letting.address_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Letting.id"><code class="docutils literal notranslate"><span class="pre">Letting.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Letting.objects"><code class="docutils literal notranslate"><span class="pre">Letting.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lettings.models.Letting.title"><code class="docutils literal notranslate"><span class="pre">Letting.title</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="lettings_views.html">Lettings Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lettings_urls.html">Lettings URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lettings_test.html">Lettings Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lettings_factories.html">Lettings Factories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lettings_index.html#sections-disponibles">Sections disponibles</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../guide_utilisation.html">Guide d’Utilisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deploiement.html">Déploiement et Gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../profiles/profiles_index.html">Gestion des Profils</a></li>
 </ul>
 
         </div>
@@ -69,6 +106,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="lettings_index.html">Gestion des Annonces</a></li>
       <li class="breadcrumb-item active">Lettings Models</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/lettings/lettings_models.rst.txt" rel="nofollow"> Afficher la source de la page</a>
@@ -104,19 +142,12 @@ le nom de la rue, la ville, l’état, le code postal et le code ISO du pays.</p
 - zip_code (PositiveIntegerField) : Code postal avec une valeur maximale de 99999.
 - country_iso_code (CharField) : Code ISO du pays avec une longueur fixe de 3 caractères.</p>
 <p>Méthodes :
-- __str__() : Retourne une chaîne représentant l’adresse sous le format</p>
-<blockquote>
-<div><p>« numéro rue ».</p>
-</div></blockquote>
+- __str__() : Retourne une chaîne représentant l’adresse sous le format « numéro rue ».</p>
 <p>Métadonnées :
-- db_table (str) : Nom de la table dans la base de données. Défini comme</p>
-<blockquote>
-<div><p>« oc_lettings_site_address ».</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>verbose_name_plural (str) : Nom pluriel de l’objet utilisé dans l’interface
-d’administration. Défini comme « Addresses ».</p></li>
-</ul>
+- db_table (str) : Nom de la table dans la base de données.
+Défini comme « lettings_address ».
+- verbose_name_plural (str) : Nom pluriel de l’objet utilisé dans
+l’interface d’administration. Défini comme « Addresses ».</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="lettings.models.Address.DoesNotExist">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#lettings.models.Address.DoesNotExist" title="Lien vers cette définition"></a></dt>
@@ -203,24 +234,20 @@ object the first time, the query is executed.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.models.</span></span><span class="sig-name descname"><span class="pre">Letting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lettings/models.html#Letting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.Letting" title="Lien vers cette définition"></a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
 <p>Modèle représentant une annonce de location.</p>
-<p>Ce modèle stocke les informations d’une annonce de location, y compris
-le titre de l’annonce et l’adresse associée.</p>
+<p>Ce modèle stocke les informations d’une annonce de location,
+y compris le titre de l’annonce et l’adresse associée.</p>
 <p>Attributs :
-- title (CharField) : Titre de l’annonce avec une longueur maximale de 256 caractères.
-- address (OneToOneField) : Relation un-à-un avec le modèle <cite>Address</cite>. Cette</p>
-<blockquote>
-<div><p>relation assure qu’une annonce est associée à une seule adresse et vice versa.</p>
-</div></blockquote>
+- title (CharField) : Titre de l’annonce avec une longueur maximale
+de 256 caractères.
+- address (OneToOneField) : Relation un-à-un avec le modèle <cite>Address</cite>.
+Cette relation assure qu’une annonce est associée à une seule adresse
+et vice versa.</p>
 <p>Méthodes :
-- __str__() : Retourne le titre de l’annonce comme représentation en chaîne de</p>
-<blockquote>
-<div><p>caractères de l’annonce.</p>
-</div></blockquote>
+- __str__() : Retourne le titre de l’annonce comme représentation en chaîne
+de caractères de l’annonce.</p>
 <p>Métadonnées :
-- db_table (str) : Nom de la table dans la base de données. Défini comme</p>
-<blockquote>
-<div><p>« oc_lettings_site_letting ».</p>
-</div></blockquote>
+- db_table (str) : Nom de la table dans la base de données.
+Défini comme « lettings_letting ».</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="lettings.models.Letting.DoesNotExist">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#lettings.models.Letting.DoesNotExist" title="Lien vers cette définition"></a></dt>
@@ -276,7 +303,10 @@ object the first time, the query is executed.</p>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="lettings_index.html" class="btn btn-neutral float-left" title="Gestion des Annonces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="lettings_views.html" class="btn btn-neutral float-right" title="Lettings Views" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

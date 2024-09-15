@@ -8,5 +8,6 @@ Objectifs du Projet
 ===================
 
 Le site a pour but de :
+
 - **Permettre aux utilisateurs** de rechercher, visualiser et interagir avec des annonces de locations.
 - **Fournir une interface d'administration** pour que les administrateurs puissent gérer les utilisateurs, les propriétés et les autres aspects du site.

@@ -2,15 +2,20 @@ import os
 
 import sentry_sdk
 
+import dotenv
+
 from sentry_sdk.integrations.django import DjangoIntegration
 
 from pathlib import Path
 
+dotenv.load_dotenv()
+
 
 sentry_sdk.init(
-    dsn="",
+    dsn=os.getenv("SENTRY_DSN"),
     integrations=[DjangoIntegration()],
     traces_sample_rate=0.10,
+    profiles_sample_rate=0.10,
     send_default_pii=True,
 )
 
@@ -25,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = ["p13-082024-latest.onrender.com", "localhost", "127.0.0.1"]
 

@@ -49,9 +49,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../guide_demarrage_rapide.html">Guide de Démarrage Rapide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../technologies.html">Technologies et Langages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../base_donnees.html">Structure de la Base de Données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../profiles/profiles_index.html">Gestion des Profils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lettings/lettings_index.html">Gestion des Annonces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../guide_utilisation.html">Guide d’Utilisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deploiement.html">Déploiement et Gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../profiles/profiles_index.html">Gestion des Profils</a></li>
 </ul>
 
         </div>
@@ -83,14 +84,13 @@
 <span class="sd">Factories pour les modèles Address et Letting.</span>
 
 <span class="sd">Ce fichier définit des classes de factory pour générer des instances des modèles</span>
-<span class="sd">`Address` et `Letting` à des fins de test. Ces factories utilisent le module</span>
-<span class="sd">`factory_boy` pour créer des objets avec des données réalistes, permettant ainsi</span>
-<span class="sd">de simplifier les tests unitaires et d&#39;intégration.</span>
+<span class="sd">`Address` et `Letting`</span>
+<span class="sd">à des fins de test. Ces factories utilisent le module `factory_boy` pour créer des objets avec des</span>
+<span class="sd">données réalistes, permettant ainsi de simplifier les tests unitaires et d&#39;intégration.</span>
 
 <span class="sd">Classes :</span>
 <span class="sd">- `AddressFactory` : Génère des instances du modèle `Address`.</span>
-<span class="sd">- `LettingFactory` : Génère des instances du modèle `Letting` avec une adresse</span>
-<span class="sd">  associée.</span>
+<span class="sd">- `LettingFactory` : Génère des instances du modèle `Letting` avec une adresse associée.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">factory</span>
@@ -103,9 +103,9 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Factory pour le modèle `Address`.</span>
 
-<span class="sd">    Cette classe génère des instances du modèle `Address` avec des données</span>
-<span class="sd">    réalistes pour chaque champ, y compris le numéro de bâtiment, la rue, la</span>
-<span class="sd">    ville, l&#39;état, le code postal, et le code pays (ISO).</span>
+<span class="sd">    Cette classe génère des instances du modèle `Address` avec des données réalistes</span>
+<span class="sd">    pour chaque champ, y compris le numéro de bâtiment, la rue, la ville, l&#39;état,</span>
+<span class="sd">    le code postal, et le code pays (ISO).</span>
 
 <span class="sd">    Attributs :</span>
 <span class="sd">    - `number` : Numéro de bâtiment, généré par Faker.</span>

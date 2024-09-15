@@ -13,10 +13,10 @@ Bienvenue dans la documentation officielle du site web d'Orange County Lettings.
    guide_demarrage_rapide
    technologies
    base_donnees
-   guide_utilisation
-   deploiement
    profiles/profiles_index
    lettings/lettings_index
+   guide_utilisation
+   deploiement
 
 Indices et tables
 =================
