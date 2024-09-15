@@ -56,14 +56,6 @@ jobs:
         docker tag $IMAGE_NAME:$TAG $IMAGE_NAME:latest
         docker push $IMAGE_NAME:$TAG
         docker push $IMAGE_NAME:latest
-    - name: Run container locally
-      if: ${{ github.ref == 'refs/heads/master' }}
-      run: |
-        IMAGE_NAME=myryos/p13_082024
-        TAG=$(git rev-parse --short HEAD)
-        docker pull $IMAGE_NAME:$TAG
-        docker run -d -p 8000:8000 $IMAGE_NAME:$TAG
-
 
   deploy:
     runs-on: ubuntu-latest
