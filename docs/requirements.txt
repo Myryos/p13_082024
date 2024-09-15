@@ -2,3 +2,4 @@ Django==5.1
 Sphinx==7.4.7
 sphinx-rtd-theme==2.0.0
 sentry-sdk==2.13.0
+python-dotenv==1.0.1
