@@ -55,6 +55,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="profiles_index.html">Gestion des Profils</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="profiles_models.html">Profiles Models</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Profiles Views</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#views-py">views.py</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#vues-disponibles">Vues disponibles:</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#profiles.views.index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#profiles.views.profile"><code class="docutils literal notranslate"><span class="pre">profile()</span></code></a></li>
 </ul>
@@ -98,50 +102,41 @@
   <section id="profiles-views">
 <h1>Profiles Views<a class="headerlink" href="#profiles-views" title="Lien vers cette rubrique"></a></h1>
 <p>Ce module contient les vues pour l’application de gestion des profils.</p>
-<p id="module-profiles.views">views.py</p>
+<section id="views-py">
+<span id="module-profiles.views"></span><h2>views.py<a class="headerlink" href="#views-py" title="Lien vers cette rubrique"></a></h2>
 <p>Ce module contient les vues pour l’application de gestion des profils.</p>
-<dl>
-<dt>Vues disponibles:</dt><dd><ul class="simple">
-<li><p>index: Affiche la liste de tous les profils.</p></li>
-<li><p>profile: Affiche les détails d’un profil spécifique</p></li>
+<section id="vues-disponibles">
+<h3>Vues disponibles:<a class="headerlink" href="#vues-disponibles" title="Lien vers cette rubrique"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code> : Affiche la liste de tous les profils.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">profile</span></code> : Affiche les détails d’un profil spécifique basé sur le nom d’utilisateur.</p></li>
 </ul>
-<p>basé sur le nom d’utilisateur.</p>
-</dd>
-</dl>
+</section>
+</section>
 <dl class="py function">
 <dt class="sig sig-object py" id="profiles.views.index">
 <span class="sig-prename descclassname"><span class="pre">profiles.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/profiles/views.html#index"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#profiles.views.index" title="Lien vers cette définition"></a></dt>
-<dd><p>Vue pour afficher la liste des profils des utilisateurs.</p>
-<p>Cette vue récupère tous les profils d’utilisateur à partir
-de la base de données et les passe au modèle
-<cite>profiles/index.html</cite> pour les afficher.
-La liste des profils est envoyée dans le contexte sous la clé
-<cite>profiles_list</cite>.</p>
+<dd><p>Affiche la liste des profils utilisateurs.</p>
+<p>Récupère tous les profils et les passe au modèle <cite>profiles/index.html</cite> pour affichage.
+La liste des profils est envoyée dans le contexte sous la clé <cite>profiles_list</cite>.</p>
 <p>Paramètres :
-- request (HttpRequest) : L’objet requête contenant
-les informations sur la requête HTTP effectuée.</p>
+- <code class="docutils literal notranslate"><span class="pre">request</span></code> (HttpRequest) : La requête HTTP effectuée.</p>
 <p>Retourne :
-- HttpResponse : Une réponse HTTP rendue à partir du modèle
-<cite>profiles/index.html</cite>, contenant la liste des profils des utilisateurs.</p>
+- <code class="docutils literal notranslate"><span class="pre">HttpResponse</span></code> : Réponse HTTP contenant la liste des profils.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="profiles.views.profile">
 <span class="sig-prename descclassname"><span class="pre">profiles.views.</span></span><span class="sig-name descname"><span class="pre">profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/profiles/views.html#profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#profiles.views.profile" title="Lien vers cette définition"></a></dt>
-<dd><p>Vue pour afficher les détails d’un profil utilisateur spécifique.</p>
-<p>Cette vue récupère un profil utilisateur spécifique en fonction du nom
-d’utilisateur (<cite>username</cite>) et passe
-les détails de ce profil au modèle <cite>profiles/profile.html</cite> pour les afficher.
-Les informations du profil
-sont envoyées dans le contexte sous la clé <cite>profile</cite>.</p>
+<dd><p>Affiche les détails d’un profil spécifique.</p>
+<p>Récupère un profil utilisateur en fonction du nom d’utilisateur et le passe au modèle
+<cite>profiles/profile.html</cite> pour affichage. Le profil est envoyé dans le contexte sous la
+clé <code class="docutils literal notranslate"><span class="pre">profile</span></code>.</p>
 <p>Paramètres :
-- request (HttpRequest) : L’objet requête contenant les informations
-sur la requête HTTP effectuée.
-- username (str) : Le nom d’utilisateur du profil dont les détails
-doivent être affichés.</p>
+- <code class="docutils literal notranslate"><span class="pre">request</span></code> (HttpRequest) : La requête HTTP effectuée.
+- <code class="docutils literal notranslate"><span class="pre">username</span></code> (str) : Le nom d’utilisateur du profil à afficher.</p>
 <p>Retourne :
-- HttpResponse : Une réponse HTTP rendue à partir du modèle
-<cite>profiles/profile.html</cite>, contenant les détails du profil utilisateur.</p>
+- <code class="docutils literal notranslate"><span class="pre">HttpResponse</span></code> : Réponse HTTP contenant les détails du profil utilisateur.</p>
 </dd></dl>
 
 </section>

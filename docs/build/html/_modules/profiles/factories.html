@@ -81,18 +81,22 @@
              
   <h1>Code source de profiles.factories</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Factories pour les modèles User et Profile.</span>
+<span class="sd">Factories pour les modèles User et Profile</span>
+<span class="sd">==========================================</span>
 
 <span class="sd">Ce fichier définit des classes de factory pour générer des instances des modèles</span>
-<span class="sd">`User` et `Profile` à des fins de test.</span>
+<span class="sd">``User`` et ``Profile`` à des fins de test.</span>
+
 <span class="sd">Les factories sont utilisées pour créer des objets de manière simple et</span>
 <span class="sd">cohérente dans les tests unitaires, en générant des données réalistes</span>
 <span class="sd">sans avoir à les créer manuellement.</span>
 
 <span class="sd">Classes :</span>
-<span class="sd">- `UserFactory` : Génère des instances du modèle `User`.</span>
-<span class="sd">- `ProfileFactory` : Génère des instances du modèle `Profile`,</span>
-<span class="sd">avec un utilisateur associé généré par `UserFactory`.</span>
+<span class="sd">---------</span>
+
+<span class="sd">- ``UserFactory`` : Génère des instances du modèle ``User``.</span>
+<span class="sd">- ``ProfileFactory`` : Génère des instances du modèle ``Profile``,</span>
+<span class="sd">  avec un utilisateur associé généré par ``UserFactory``.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">factory</span>
@@ -104,18 +108,22 @@
 <a class="viewcode-back" href="../../profiles/profiles_factories.html#profiles.factories.UserFactory">[docs]</a>
 <span class="k">class</span> <span class="nc">UserFactory</span><span class="p">(</span><span class="n">factory</span><span class="o">.</span><span class="n">django</span><span class="o">.</span><span class="n">DjangoModelFactory</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Factory pour le modèle `User`.</span>
+<span class="sd">        Factory pour le modèle User</span>
+<span class="sd">    ===========================</span>
 
 <span class="sd">    Cette classe génère des instances de l&#39;utilisateur Django par défaut.</span>
 <span class="sd">    Chaque utilisateur créé a un nom d&#39;utilisateur unique et</span>
 <span class="sd">    une adresse email dérivée de ce nom d&#39;utilisateur.</span>
 
 <span class="sd">    Attributs :</span>
-<span class="sd">    - `username` : Un nom d&#39;utilisateur unique généré automatiquement.</span>
-<span class="sd">    - `first_name` : Prénom de l&#39;utilisateur, par défaut &quot;John&quot;.</span>
-<span class="sd">    - `last_name` : Nom de famille de l&#39;utilisateur, par défaut &quot;Doe&quot;.</span>
-<span class="sd">    - `email` : Adresse email de l&#39;utilisateur, générée</span>
-<span class="sd">    automatiquement à partir du nom d&#39;utilisateur.</span>
+<span class="sd">    -----------</span>
+
+<span class="sd">    - ``username`` : Un nom d&#39;utilisateur unique généré automatiquement.</span>
+<span class="sd">    - ``first_name`` : Prénom de l&#39;utilisateur, par défaut &quot;John&quot;.</span>
+<span class="sd">    - ``last_name`` : Nom de famille de l&#39;utilisateur, par défaut &quot;Doe&quot;.</span>
+<span class="sd">    - ``email`` : Adresse email de l&#39;utilisateur, générée</span>
+<span class="sd">      automatiquement à partir du nom d&#39;utilisateur.</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
@@ -132,14 +140,18 @@
 <a class="viewcode-back" href="../../profiles/profiles_factories.html#profiles.factories.ProfileFactory">[docs]</a>
 <span class="k">class</span> <span class="nc">ProfileFactory</span><span class="p">(</span><span class="n">factory</span><span class="o">.</span><span class="n">django</span><span class="o">.</span><span class="n">DjangoModelFactory</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Factory pour le modèle `Profile`.</span>
+<span class="sd">        Factory pour le modèle Profile</span>
+<span class="sd">    ==============================</span>
 
-<span class="sd">    Cette classe génère des instances du modèle `Profile`, qui inclut un utilisateur associé</span>
-<span class="sd">    généré par `UserFactory` et une ville favorite choisie de manière aléatoire.</span>
+<span class="sd">    Cette classe génère des instances du modèle ``Profile``, qui inclut un utilisateur associé</span>
+<span class="sd">    généré par ``UserFactory`` et une ville favorite choisie de manière aléatoire.</span>
 
 <span class="sd">    Attributs :</span>
-<span class="sd">    - `user` : Une instance de `User` associée, générée par `UserFactory`.</span>
-<span class="sd">    - `favorite_city` : Une ville favorite choisie aléatoirement à l&#39;aide de Faker.</span>
+<span class="sd">    -----------</span>
+
+<span class="sd">    - ``user`` : Une instance de ``User`` associée, générée par ``UserFactory``.</span>
+<span class="sd">    - ``favorite_city`` : Une ville favorite choisie aléatoirement à l&#39;aide de Faker.</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>

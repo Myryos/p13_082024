@@ -4,8 +4,8 @@ models.py
 Ce module contient les modèles pour l'application, incluant les définitions pour
 `Address` et `Letting`.
 
-- Address: Représente une adresse physique.
-- Letting: Représente une location, associée à une adresse.
+- `Address` : Représente une adresse physique.
+- `Letting` : Représente une location, associée à une adresse.
 """
 
 from django.db import models
@@ -14,27 +14,26 @@ from django.core.validators import MaxValueValidator, MinLengthValidator
 
 class Address(models.Model):
     """
-    Modèle représentant une adresse.
+    Modèle représentant une adresse physique.
 
-    Ce modèle stocke les détails d'une adresse, y compris le numéro de rue,
-    le nom de la rue, la ville, l'état, le code postal et le code ISO du pays.
+    Stocke les détails d'une adresse, y compris le numéro de rue, le nom de la rue,
+    la ville, l'état, le code postal, et le code ISO du pays.
 
     Attributs :
-    - number (PositiveIntegerField) : Numéro de la rue, valide jusqu'à 9999.
-    - street (CharField) : Nom de la rue avec une longueur maximale de 64 caractères.
-    - city (CharField) : Nom de la ville avec une longueur maximale de 64 caractères.
-    - state (CharField) : État ou province avec une longueur fixe de 2 caractères.
-    - zip_code (PositiveIntegerField) : Code postal avec une valeur maximale de 99999.
-    - country_iso_code (CharField) : Code ISO du pays avec une longueur fixe de 3 caractères.
+    - `number` (PositiveIntegerField) : Numéro de rue, valide jusqu'à 9999.
+    - `street` (CharField) : Nom de la rue, longueur maximale de 64 caractères.
+    - `city` (CharField) : Nom de la ville, longueur maximale de 64 caractères.
+    - `state` (CharField) : État ou province, longueur fixe de 2 caractères.
+    - `zip_code` (PositiveIntegerField) : Code postal, valeur maximale de 99999.
+    - `country_iso_code` (CharField) : Code ISO du pays, longueur fixe de 3 caractères.
 
     Méthodes :
-    - __str__() : Retourne une chaîne représentant l'adresse sous le format "numéro rue".
+    - `__str__()` : Retourne une chaîne représentant l'adresse sous le format
+    "numéro rue".
 
     Métadonnées :
-    - db_table (str) : Nom de la table dans la base de données.
-    Défini comme "lettings_address".
-    - verbose_name_plural (str) : Nom pluriel de l'objet utilisé dans
-    l'interface d'administration. Défini comme "Addresses".
+    - `db_table` (str) : Nom de la table dans la base de données, "lettings_address".
+    - `verbose_name_plural` (str) : Nom pluriel de l'objet dans l'admin, "Addresses".
     """
 
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
@@ -48,35 +47,25 @@ class Address(models.Model):
 
     def __str__(self):
         """
-        Retourne une représentation en chaîne de caractères de l'adresse.
+        Retourne une chaîne de caractères de l'adresse.
 
-        Cette méthode renvoie une chaîne de caractères au format "numéro rue",
-        ce qui permet de représenter
-        l'adresse de manière lisible et concise. Cela facilite l'affichage de
-        l'objet `Address` dans les
-        interfaces utilisateur et les interfaces d'administration.
+        La chaîne est au format "numéro rue", représentant l'adresse de manière
+        lisible et concise.
 
         Returns:
-            str: Une chaîne représentant l'adresse sous le format "numéro rue".
+            str: Chaîne représentant l'adresse au format "numéro rue".
         """
         return f"{self.number} {self.street}"
 
     class Meta:
         """
-        Classe interne de configuration pour le modèle `Address`.
+        Configuration interne pour le modèle `Address`.
 
-        Cette classe interne `Meta` est utilisée pour définir des options de
-        métadonnées pour le modèle `Address`.
-        Les options définies ici affectent le comportement et
-        la représentation du modèle dans la base de données et
-        dans l'interface d'administration Django.
+        Définit les options de métadonnées pour le modèle `Address`.
 
         Attributs :
-        - db_table (str) : Nom de la table dans la base de données qui
-        sera utilisée pour stocker les instances du modèle.
-          Dans ce cas, la table est nommée "lettings_address".
-        - verbose_name_plural (str) : Nom pluriel de l'objet utilisé dans
-        l'interface d'administration Django. Défini comme "Addresses".
+        - `db_table` (str) : Nom de la table dans la base de données, "lettings_address".
+        - `verbose_name_plural` (str) : Nom pluriel dans l'admin, "Addresses".
         """
 
         db_table = "lettings_address"
@@ -87,23 +76,18 @@ class Letting(models.Model):
     """
     Modèle représentant une annonce de location.
 
-    Ce modèle stocke les informations d'une annonce de location,
-    y compris le titre de l'annonce et l'adresse associée.
+    Stocke les informations d'une annonce de location, incluant le titre et
+    l'adresse associée.
 
     Attributs :
-    - title (CharField) : Titre de l'annonce avec une longueur maximale
-    de 256 caractères.
-    - address (OneToOneField) : Relation un-à-un avec le modèle `Address`.
-    Cette relation assure qu'une annonce est associée à une seule adresse
-    et vice versa.
+    - `title` (CharField) : Titre de l'annonce, longueur maximale de 256 caractères.
+    - `address` (OneToOneField) : Relation un-à-un avec le modèle `Address`.
 
     Méthodes :
-    - __str__() : Retourne le titre de l'annonce comme représentation en chaîne
-    de caractères de l'annonce.
+    - `__str__()` : Retourne le titre de l'annonce comme chaîne de caractères.
 
     Métadonnées :
-    - db_table (str) : Nom de la table dans la base de données.
-    Défini comme "lettings_letting".
+    - `db_table` (str) : Nom de la table dans la base de données, "lettings_letting".
     """
 
     title = models.CharField(max_length=256)
@@ -111,32 +95,24 @@ class Letting(models.Model):
 
     def __str__(self):
         """
-        Retourne une représentation en chaîne de caractères du modèle `Letting`.
+        Retourne une chaîne de caractères du titre de l'annonce.
 
-        Cette méthode renvoie le titre de l'annonce, ce qui permet
-        une représentation lisible et identifiable de l'objet `Letting`
-        lorsque celui-ci est affiché dans l'interface Django admin ou
-        dans les requêtes qui affichent des objets `Letting`.
+        La chaîne représente le titre de l'annonce, ce qui est utile dans
+        les interfaces d'administration et autres contextes.
 
         Returns:
-            str: Le titre de l'annonce.
+            str: Titre de l'annonce.
         """
         return self.title
 
     class Meta:
         """
-        Classe interne de configuration pour le modèle `Letting`.
+        Configuration interne pour le modèle `Letting`.
 
-        Cette classe interne `Meta` est utilisée pour définir
-        des options de métadonnées pour le modèle `Letting`.
-        Les options définies ici affectent le comportement
-        et la représentation du modèle dans la base de données et
-        dans l'interface d'administration Django.
+        Définit les options de métadonnées pour le modèle `Letting`.
 
         Attributs :
-        - db_table (str) : Nom de la table dans la base de données
-        qui sera utilisée pour stocker les instances du modèle.
-          Dans ce cas, la table est nommée "lettings_letting".
+        - `db_table` (str) : Nom de la table dans la base de données, "lettings_letting".
         """
 
         db_table = "lettings_letting"

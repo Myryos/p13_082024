@@ -1,11 +1,11 @@
 """
-view.py
+views.py
 
 Ce module contient les vues pour l'application de gestion des locations.
 
-Vues disponibles:
-    - lettings_index: Affiche la liste des locations.
-    - letting: Affiche les détails d'une location spécifique.
+Vues disponibles :
+- `lettings_index` : Affiche la liste des locations.
+- `letting` : Affiche les détails d'une location spécifique.
 """
 
 from django.shortcuts import render, get_object_or_404
@@ -20,18 +20,16 @@ def index(request):
     """
     Vue pour afficher la liste des annonces de location.
 
-    Cette vue récupère toutes les annonces de location présentes dans
-    la base de données et les passe au modèle
-    `lettings/index.html` pour les afficher. La liste des annonces
-    est envoyée dans le contexte sous la clé `lettings_list`.
+    Récupère toutes les annonces de location de la base de données et les passe
+    au modèle `lettings/index.html` pour affichage. La liste des annonces est
+    envoyée dans le contexte sous la clé `lettings_list`.
 
-    Paramètres :
-    - request (HttpRequest) : L'objet requête contenant les informations
-    sur la requête HTTP effectuée.
+    :param request: Objet requête contenant les informations HTTP.
+    :type request: HttpRequest
 
-    Retourne :
-    - HttpResponse : Une réponse HTTP rendue à partir du modèle
-    `lettings/index.html`, contenant la liste des annonces de location.
+    :return: Réponse HTTP rendue à partir du modèle `lettings/index.html`, avec
+        la liste des annonces de location.
+    :rtype: HttpResponse
     """
     lettings_list = Letting.objects.all()
     context = {"lettings_list": lettings_list}
@@ -55,21 +53,19 @@ def letting(request, letting_id):
     """
     Vue pour afficher les détails d'une annonce de location spécifique.
 
-    Cette vue récupère une annonce de location spécifique à partir
-    de son identifiant (`letting_id`) et passe les
-    détails de cette annonce au modèle `lettings/letting.html`
-    pour les afficher. Les informations de l'annonce
-    sont envoyées dans le contexte sous les clés `title` et `address`.
+    Récupère une annonce de location par son identifiant (`letting_id`) et passe
+    les détails au modèle `lettings/letting.html`. Les informations sont envoyées
+    dans le contexte sous les clés `title` et `address`.
 
-    Paramètres :
-    - request (HttpRequest) : L'objet requête contenant les informations
-    sur la requête HTTP effectuée.
-    - letting_id (int) : L'identifiant de l'annonce de location dont
-    les détails doivent être affichés.
+    :param request: Objet requête contenant les informations HTTP.
+    :type request: HttpRequest
+    :param letting_id: Identifiant de l'annonce dont les détails doivent être
+        affichés.
+    :type letting_id: int
 
-    Retourne :
-    - HttpResponse : Une réponse HTTP rendue à partir du modèle
-    `lettings/letting.html`, contenant les détails de l'annonce de location.
+    :return: Réponse HTTP rendue à partir du modèle `lettings/letting.html`, avec
+        les détails de l'annonce.
+    :rtype: HttpResponse
     """
     letting = get_object_or_404(Letting, pk=letting_id)
     context = {

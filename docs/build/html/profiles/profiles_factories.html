@@ -119,16 +119,22 @@ avec un utilisateur associé généré par <cite>UserFactory</cite>.</p>
 <dt class="sig sig-object py" id="profiles.factories.UserFactory">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profiles.factories.</span></span><span class="sig-name descname"><span class="pre">UserFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/profiles/factories.html#UserFactory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#profiles.factories.UserFactory" title="Lien vers cette définition"></a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelFactory</span></code></p>
-<p>Factory pour le modèle <cite>User</cite>.</p>
+<blockquote>
+<div><p>Factory pour le modèle User</p>
+</div></blockquote>
+<hr class="docutils" />
 <p>Cette classe génère des instances de l’utilisateur Django par défaut.
 Chaque utilisateur créé a un nom d’utilisateur unique et
 une adresse email dérivée de ce nom d’utilisateur.</p>
-<p>Attributs :
-- <cite>username</cite> : Un nom d’utilisateur unique généré automatiquement.
-- <cite>first_name</cite> : Prénom de l’utilisateur, par défaut « John ».
-- <cite>last_name</cite> : Nom de famille de l’utilisateur, par défaut « Doe ».
-- <cite>email</cite> : Adresse email de l’utilisateur, générée
-automatiquement à partir du nom d’utilisateur.</p>
+<section id="attributs">
+<h2>Attributs :<a class="headerlink" href="#attributs" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">username</span></code> : Un nom d’utilisateur unique généré automatiquement.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">first_name</span></code> : Prénom de l’utilisateur, par défaut « John ».</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">last_name</span></code> : Nom de famille de l’utilisateur, par défaut « Doe ».</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">email</span></code> : Adresse email de l’utilisateur, générée
+automatiquement à partir du nom d’utilisateur.</p></li>
+</ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="profiles.factories.UserFactory.email">
 <span class="sig-name descname"><span class="pre">email</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.LazyAttribute</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#profiles.factories.UserFactory.email" title="Lien vers cette définition"></a></dt>
@@ -149,18 +155,25 @@ automatiquement à partir du nom d’utilisateur.</p>
 <span class="sig-name descname"><span class="pre">username</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.Sequence</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#profiles.factories.UserFactory.username" title="Lien vers cette définition"></a></dt>
 <dd></dd></dl>
 
+</section>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="profiles.factories.ProfileFactory">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profiles.factories.</span></span><span class="sig-name descname"><span class="pre">ProfileFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/profiles/factories.html#ProfileFactory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#profiles.factories.ProfileFactory" title="Lien vers cette définition"></a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelFactory</span></code></p>
-<p>Factory pour le modèle <cite>Profile</cite>.</p>
-<p>Cette classe génère des instances du modèle <cite>Profile</cite>, qui inclut un utilisateur associé
-généré par <cite>UserFactory</cite> et une ville favorite choisie de manière aléatoire.</p>
-<p>Attributs :
-- <cite>user</cite> : Une instance de <cite>User</cite> associée, générée par <cite>UserFactory</cite>.
-- <cite>favorite_city</cite> : Une ville favorite choisie aléatoirement à l’aide de Faker.</p>
+<blockquote>
+<div><p>Factory pour le modèle Profile</p>
+</div></blockquote>
+<hr class="docutils" />
+<p>Cette classe génère des instances du modèle <code class="docutils literal notranslate"><span class="pre">Profile</span></code>, qui inclut un utilisateur associé
+généré par <code class="docutils literal notranslate"><span class="pre">UserFactory</span></code> et une ville favorite choisie de manière aléatoire.</p>
+<section id="id1">
+<h2>Attributs :<a class="headerlink" href="#id1" title="Lien vers cette rubrique"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">user</span></code> : Une instance de <code class="docutils literal notranslate"><span class="pre">User</span></code> associée, générée par <code class="docutils literal notranslate"><span class="pre">UserFactory</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">favorite_city</span></code> : Une ville favorite choisie aléatoirement à l’aide de Faker.</p></li>
+</ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="profiles.factories.ProfileFactory.favorite_city">
 <span class="sig-name descname"><span class="pre">favorite_city</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.faker.Faker</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#profiles.factories.ProfileFactory.favorite_city" title="Lien vers cette définition"></a></dt>
@@ -171,6 +184,7 @@ généré par <cite>UserFactory</cite> et une ville favorite choisie de manière
 <span class="sig-name descname"><span class="pre">user</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.SubFactory</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#profiles.factories.ProfileFactory.user" title="Lien vers cette définition"></a></dt>
 <dd></dd></dl>
 
+</section>
 </dd></dl>
 
 </section>

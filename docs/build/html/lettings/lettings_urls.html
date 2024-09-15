@@ -96,20 +96,22 @@
 <p>Ce module définit les URL pour l’application de gestion des annonces de location.
 Les chemins disponibles sont associés aux vues définies dans <cite>views.py</cite>.</p>
 <p id="module-lettings.urls">urls.py</p>
-<p>Ce module définit les URL pour l’application de gestion des annonces (lettings).</p>
-<p>Les URL suivantes sont disponibles :
+<p>Ce module définit les URL pour l’application de gestion des annonces (<cite>lettings</cite>).</p>
+<p>Les URL disponibles :
 - / : Affiche la liste de toutes les annonces. (Nom de l’URL : “lettings_index”)
-- /&lt;letting_id&gt;/ : Affiche les détails d’une annonce spécifique
-basée sur l’identifiant de l’annonce. (Nom de l’URL : “letting”)</p>
+- /&lt;letting_id&gt;/ : Affiche les détails d’une annonce spécifique par son identifiant.</p>
+<blockquote>
+<div><p>(Nom de l’URL : “letting”)</p>
+</div></blockquote>
 <p>Les vues associées sont définies dans le module <cite>views.py</cite>.</p>
 <p>Exemple d’utilisation des URL :
-- La route vide (“”) est associée à la vue <cite>index</cite> pour afficher
-la liste des annonces.
-- La route avec un identifiant d’annonce (“&lt;int:letting_id&gt;/”)
-est associée à la vue <cite>letting</cite> pour afficher les détails d’une annonce
-spécifique.</p>
-<p>Les paramètres d’URL sont :
-- <cite>letting_id</cite> (int) : L’identifiant unique de l’annonce à afficher.</p>
+- La route vide (“”) est associée à la vue <cite>index</cite> pour afficher la liste des annonces.
+- La route avec un identifiant d’annonce (“&lt;int:letting_id&gt;/”) est associée à la vue</p>
+<blockquote>
+<div><p><cite>letting</cite> pour afficher les détails d’une annonce spécifique.</p>
+</div></blockquote>
+<p>Paramètres d’URL :
+- <cite>letting_id</cite> (int) : Identifiant unique de l’annonce à afficher.</p>
 </section>
 
 

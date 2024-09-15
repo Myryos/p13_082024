@@ -84,9 +84,8 @@
 <span class="sd">Factories pour les modèles Address et Letting.</span>
 
 <span class="sd">Ce fichier définit des classes de factory pour générer des instances des modèles</span>
-<span class="sd">`Address` et `Letting`</span>
-<span class="sd">à des fins de test. Ces factories utilisent le module `factory_boy` pour créer des objets avec des</span>
-<span class="sd">données réalistes, permettant ainsi de simplifier les tests unitaires et d&#39;intégration.</span>
+<span class="sd">`Address` et `Letting` à des fins de test. Ces factories utilisent `factory_boy`</span>
+<span class="sd">pour créer des objets avec des données réalistes, simplifiant ainsi les tests.</span>
 
 <span class="sd">Classes :</span>
 <span class="sd">- `AddressFactory` : Génère des instances du modèle `Address`.</span>
@@ -103,17 +102,17 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Factory pour le modèle `Address`.</span>
 
-<span class="sd">    Cette classe génère des instances du modèle `Address` avec des données réalistes</span>
-<span class="sd">    pour chaque champ, y compris le numéro de bâtiment, la rue, la ville, l&#39;état,</span>
-<span class="sd">    le code postal, et le code pays (ISO).</span>
+<span class="sd">    Génère des instances du modèle `Address` avec des données réalistes pour chaque</span>
+<span class="sd">    champ, y compris le numéro de bâtiment, la rue, la ville, l&#39;état, le code postal,</span>
+<span class="sd">    et le code pays (ISO).</span>
 
 <span class="sd">    Attributs :</span>
-<span class="sd">    - `number` : Numéro de bâtiment, généré par Faker.</span>
-<span class="sd">    - `street` : Nom de la rue, généré par Faker.</span>
-<span class="sd">    - `city` : Nom de la ville, généré par Faker.</span>
-<span class="sd">    - `state` : Abréviation de l&#39;état, générée par Faker.</span>
-<span class="sd">    - `zip_code` : Code postal, généré par Faker.</span>
-<span class="sd">    - `country_iso_code` : Code ISO du pays, par défaut &quot;USA&quot;.</span>
+<span class="sd">    - ``number`` : Numéro de bâtiment, généré par Faker.</span>
+<span class="sd">    - ``street`` : Nom de la rue, généré par Faker.</span>
+<span class="sd">    - ``city`` : Nom de la ville, généré par Faker.</span>
+<span class="sd">    - ``state`` : Abréviation de l&#39;état, générée par Faker.</span>
+<span class="sd">    - ``zip_code`` : Code postal, généré par Faker.</span>
+<span class="sd">    - ``country_iso_code`` : Code ISO du pays, par défaut &quot;USA&quot;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
@@ -134,12 +133,12 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Factory pour le modèle `Letting`.</span>
 
-<span class="sd">    Cette classe génère des instances du modèle `Letting`, qui inclut un titre</span>
-<span class="sd">    généré aléatoirement et une adresse associée générée par `AddressFactory`.</span>
+<span class="sd">    Génère des instances du modèle `Letting`, incluant un titre aléatoire et une</span>
+<span class="sd">    adresse associée générée par `AddressFactory`.</span>
 
 <span class="sd">    Attributs :</span>
-<span class="sd">    - `title` : Titre de l&#39;annonce, généré par Faker.</span>
-<span class="sd">    - `address` : Instance d&#39;`Address` associée, générée par `AddressFactory`.</span>
+<span class="sd">    - ``title`` : Titre de l&#39;annonce, généré par Faker.</span>
+<span class="sd">    - ``address`` : Instance d&#39;`Address` associée, générée par `AddressFactory`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>

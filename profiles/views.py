@@ -1,12 +1,13 @@
 """
 views.py
+========
 
 Ce module contient les vues pour l'application de gestion des profils.
 
 Vues disponibles:
-    - index: Affiche la liste de tous les profils.
-    - profile: Affiche les détails d'un profil spécifique
-    basé sur le nom d'utilisateur.
+-----------------
+- ``index`` : Affiche la liste de tous les profils.
+- ``profile`` : Affiche les détails d'un profil spécifique basé sur le nom d'utilisateur.
 """
 
 from django.shortcuts import render, get_object_or_404
@@ -19,21 +20,16 @@ from .models import Profile
 # quis dictum lacus d
 def index(request):
     """
-    Vue pour afficher la liste des profils des utilisateurs.
+    Affiche la liste des profils utilisateurs.
 
-    Cette vue récupère tous les profils d'utilisateur à partir
-    de la base de données et les passe au modèle
-    `profiles/index.html` pour les afficher.
-    La liste des profils est envoyée dans le contexte sous la clé
-    `profiles_list`.
+    Récupère tous les profils et les passe au modèle `profiles/index.html` pour affichage.
+    La liste des profils est envoyée dans le contexte sous la clé `profiles_list`.
 
     Paramètres :
-    - request (HttpRequest) : L'objet requête contenant
-    les informations sur la requête HTTP effectuée.
+    - ``request`` (HttpRequest) : La requête HTTP effectuée.
 
     Retourne :
-    - HttpResponse : Une réponse HTTP rendue à partir du modèle
-    `profiles/index.html`, contenant la liste des profils des utilisateurs.
+    - ``HttpResponse`` : Réponse HTTP contenant la liste des profils.
     """
     profiles_list = Profile.objects.all()
     context = {"profiles_list": profiles_list}
@@ -47,23 +43,18 @@ def index(request):
 # Pellentesque habitant morbi tristique senectus et netus et males
 def profile(request, username):
     """
-    Vue pour afficher les détails d'un profil utilisateur spécifique.
+    Affiche les détails d'un profil spécifique.
 
-    Cette vue récupère un profil utilisateur spécifique en fonction du nom
-    d'utilisateur (`username`) et passe
-    les détails de ce profil au modèle `profiles/profile.html` pour les afficher.
-    Les informations du profil
-    sont envoyées dans le contexte sous la clé `profile`.
+    Récupère un profil utilisateur en fonction du nom d'utilisateur et le passe au modèle
+    `profiles/profile.html` pour affichage. Le profil est envoyé dans le contexte sous la
+    clé ``profile``.
 
     Paramètres :
-    - request (HttpRequest) : L'objet requête contenant les informations
-    sur la requête HTTP effectuée.
-    - username (str) : Le nom d'utilisateur du profil dont les détails
-    doivent être affichés.
+    - ``request`` (HttpRequest) : La requête HTTP effectuée.
+    - ``username`` (str) : Le nom d'utilisateur du profil à afficher.
 
     Retourne :
-    - HttpResponse : Une réponse HTTP rendue à partir du modèle
-    `profiles/profile.html`, contenant les détails du profil utilisateur.
+    - ``HttpResponse`` : Réponse HTTP contenant les détails du profil utilisateur.
     """
 
     profile = get_object_or_404(Profile, user__username=username)

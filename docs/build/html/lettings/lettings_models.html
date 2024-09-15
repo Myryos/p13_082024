@@ -131,23 +131,22 @@ un titre pour l’annonce.</p></li>
 <dt class="sig sig-object py" id="lettings.models.Address">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.models.</span></span><span class="sig-name descname"><span class="pre">Address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lettings/models.html#Address"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.Address" title="Lien vers cette définition"></a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
-<p>Modèle représentant une adresse.</p>
-<p>Ce modèle stocke les détails d’une adresse, y compris le numéro de rue,
-le nom de la rue, la ville, l’état, le code postal et le code ISO du pays.</p>
+<p>Modèle représentant une adresse physique.</p>
+<p>Stocke les détails d’une adresse, y compris le numéro de rue, le nom de la rue,
+la ville, l’état, le code postal, et le code ISO du pays.</p>
 <p>Attributs :
-- number (PositiveIntegerField) : Numéro de la rue, valide jusqu’à 9999.
-- street (CharField) : Nom de la rue avec une longueur maximale de 64 caractères.
-- city (CharField) : Nom de la ville avec une longueur maximale de 64 caractères.
-- state (CharField) : État ou province avec une longueur fixe de 2 caractères.
-- zip_code (PositiveIntegerField) : Code postal avec une valeur maximale de 99999.
-- country_iso_code (CharField) : Code ISO du pays avec une longueur fixe de 3 caractères.</p>
+- <cite>number</cite> (PositiveIntegerField) : Numéro de rue, valide jusqu’à 9999.
+- <cite>street</cite> (CharField) : Nom de la rue, longueur maximale de 64 caractères.
+- <cite>city</cite> (CharField) : Nom de la ville, longueur maximale de 64 caractères.
+- <cite>state</cite> (CharField) : État ou province, longueur fixe de 2 caractères.
+- <cite>zip_code</cite> (PositiveIntegerField) : Code postal, valeur maximale de 99999.
+- <cite>country_iso_code</cite> (CharField) : Code ISO du pays, longueur fixe de 3 caractères.</p>
 <p>Méthodes :
-- __str__() : Retourne une chaîne représentant l’adresse sous le format « numéro rue ».</p>
+- <cite>__str__()</cite> : Retourne une chaîne représentant l’adresse sous le format
+« numéro rue ».</p>
 <p>Métadonnées :
-- db_table (str) : Nom de la table dans la base de données.
-Défini comme « lettings_address ».
-- verbose_name_plural (str) : Nom pluriel de l’objet utilisé dans
-l’interface d’administration. Défini comme « Addresses ».</p>
+- <cite>db_table</cite> (str) : Nom de la table dans la base de données, « lettings_address ».
+- <cite>verbose_name_plural</cite> (str) : Nom pluriel de l’objet dans l’admin, « Addresses ».</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="lettings.models.Address.DoesNotExist">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#lettings.models.Address.DoesNotExist" title="Lien vers cette définition"></a></dt>
@@ -234,20 +233,15 @@ object the first time, the query is executed.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.models.</span></span><span class="sig-name descname"><span class="pre">Letting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/lettings/models.html#Letting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#lettings.models.Letting" title="Lien vers cette définition"></a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
 <p>Modèle représentant une annonce de location.</p>
-<p>Ce modèle stocke les informations d’une annonce de location,
-y compris le titre de l’annonce et l’adresse associée.</p>
+<p>Stocke les informations d’une annonce de location, incluant le titre et
+l’adresse associée.</p>
 <p>Attributs :
-- title (CharField) : Titre de l’annonce avec une longueur maximale
-de 256 caractères.
-- address (OneToOneField) : Relation un-à-un avec le modèle <cite>Address</cite>.
-Cette relation assure qu’une annonce est associée à une seule adresse
-et vice versa.</p>
+- <cite>title</cite> (CharField) : Titre de l’annonce, longueur maximale de 256 caractères.
+- <cite>address</cite> (OneToOneField) : Relation un-à-un avec le modèle <cite>Address</cite>.</p>
 <p>Méthodes :
-- __str__() : Retourne le titre de l’annonce comme représentation en chaîne
-de caractères de l’annonce.</p>
+- <cite>__str__()</cite> : Retourne le titre de l’annonce comme chaîne de caractères.</p>
 <p>Métadonnées :
-- db_table (str) : Nom de la table dans la base de données.
-Défini comme « lettings_letting ».</p>
+- <cite>db_table</cite> (str) : Nom de la table dans la base de données, « lettings_letting ».</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="lettings.models.Letting.DoesNotExist">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#lettings.models.Letting.DoesNotExist" title="Lien vers cette définition"></a></dt>

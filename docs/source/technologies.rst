@@ -34,7 +34,7 @@ Outils de Test
 Gestion des Dépendances et Environnements
 =========================================
 
-- **django-environ** : Outil pour gérer les paramètres de configuration à partir des variables d'environnement.
+- **django-dotenv** : Outil pour gérer les paramètres de configuration à partir des variables d'environnement.
 
 Surveillance et Suivi des Erreurs
 =================================

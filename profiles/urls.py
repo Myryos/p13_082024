@@ -1,24 +1,26 @@
 """
 urls.py
+=======
 
 Ce module définit les URL pour l'application de gestion des profils.
 
 Les URL suivantes sont disponibles :
+-------------------------------------
+
 - / : Affiche la liste de tous les profils. (Nom de l'URL : 'profiles_index')
-- /<username>/ : Affiche les détails d'un profil spécifique basé
-sur le nom d'utilisateur. (Nom de l'URL : 'profile')
+- /<username>/ : Affiche les détails d'un profil spécifique. (Nom de l'URL : 'profile')
 
-Les vues associées sont définies dans le module `views.py`.
+Les vues associées sont définies dans `views.py`.
 
-Exemple d'utilisation des URL :
-- La route vide ('') est associée à la vue `index` pour afficher
-la liste des profils.
-- La route avec un nom d'utilisateur ('<str:username>/') est
-associée à la vue `profile` pour afficher les détails d'un profil spécifique.
+Exemples d'utilisation :
+------------------------
+
+- La route '' est associée à la vue ``index`` pour afficher la liste des profils.
+- La route '<str:username>/' est associée à la vue ``profile`` pour afficher un
+  profil spécifique.
 """
 
 from django.urls import path
-
 from . import views
 
 

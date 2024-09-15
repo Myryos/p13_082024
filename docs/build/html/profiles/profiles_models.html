@@ -115,21 +115,15 @@ pour inclure des informations supplémentaires spécifiques à l’application.<
 <dt class="sig sig-object py" id="profiles.models.Profile">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profiles.models.</span></span><span class="sig-name descname"><span class="pre">Profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/profiles/models.html#Profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#profiles.models.Profile" title="Lien vers cette définition"></a></dt>
 <dd><p>Bases : <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
-<p>Modèle représentant un profil utilisateur.</p>
-<p>Ce modèle étend le modèle utilisateur de Django en ajoutant
-un champ pour la ville favorite de l’utilisateur.</p>
+<p>Modèle étendant <code class="docutils literal notranslate"><span class="pre">User</span></code> avec un champ pour la ville favorite de l’utilisateur.</p>
 <p>Attributs :
-- user (OneToOneField) : Une relation un-à-un avec le modèle <cite>User</cite>.
-Ce champ est obligatoire et sera supprimé si l’utilisateur associé
-est supprimé.
-- favorite_city (CharField) : Le nom de la ville favorite de l’utilisateur.
-Ce champ est optionnel et peut être laissé vide.</p>
+- <code class="docutils literal notranslate"><span class="pre">user</span></code> (OneToOneField) : Relation un-à-un avec <code class="docutils literal notranslate"><span class="pre">User</span></code>, supprimée avec
+l’utilisateur.
+- <code class="docutils literal notranslate"><span class="pre">favorite_city</span></code> (CharField) : Ville favorite, champ optionnel.</p>
 <p>Méthodes :
-- __str__() : Retourne le nom d’utilisateur associé au profil comme
-représentation en chaîne de caractères du profil.</p>
+- <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> : Retourne le nom d’utilisateur comme représentation du profil.</p>
 <p>Métadonnées :
-- db_table (str) : Nom de la table dans la base de données.
-Défini comme « oc_lettings_site_profile ».</p>
+- <code class="docutils literal notranslate"><span class="pre">db_table</span></code> (str) : Nom de la table de la base de données.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="profiles.models.Profile.DoesNotExist">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#profiles.models.Profile.DoesNotExist" title="Lien vers cette définition"></a></dt>

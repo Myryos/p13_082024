@@ -55,7 +55,14 @@
 <li class="toctree-l1 current"><a class="reference internal" href="profiles_index.html">Gestion des Profils</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="profiles_models.html">Profiles Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiles_views.html">Profiles Views</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Profiles URLs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Profiles URLs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#urls-py">urls.py</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#les-url-suivantes-sont-disponibles">Les URL suivantes sont disponibles :</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemples-d-utilisation">Exemples d’utilisation :</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="profiles_test.html">Profiles Tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiles_factories.html">Profiles Factories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiles_index.html#sections-disponibles">Sections disponibles</a></li>
@@ -93,18 +100,26 @@
              
   <section id="module-profiles.urls">
 <span id="profiles-urls"></span><h1>Profiles URLs<a class="headerlink" href="#module-profiles.urls" title="Lien vers cette rubrique"></a></h1>
-<p>urls.py</p>
+<section id="urls-py">
+<h2>urls.py<a class="headerlink" href="#urls-py" title="Lien vers cette rubrique"></a></h2>
 <p>Ce module définit les URL pour l’application de gestion des profils.</p>
-<p>Les URL suivantes sont disponibles :
-- / : Affiche la liste de tous les profils. (Nom de l’URL : “profiles_index”)
-- /&lt;username&gt;/ : Affiche les détails d’un profil spécifique basé
-sur le nom d’utilisateur. (Nom de l’URL : “profile”)</p>
-<p>Les vues associées sont définies dans le module <cite>views.py</cite>.</p>
-<p>Exemple d’utilisation des URL :
-- La route vide (“”) est associée à la vue <cite>index</cite> pour afficher
-la liste des profils.
-- La route avec un nom d’utilisateur (“&lt;str:username&gt;/”) est
-associée à la vue <cite>profile</cite> pour afficher les détails d’un profil spécifique.</p>
+<section id="les-url-suivantes-sont-disponibles">
+<h3>Les URL suivantes sont disponibles :<a class="headerlink" href="#les-url-suivantes-sont-disponibles" title="Lien vers cette rubrique"></a></h3>
+<ul class="simple">
+<li><p>/ : Affiche la liste de tous les profils. (Nom de l’URL : “profiles_index”)</p></li>
+<li><p>/&lt;username&gt;/ : Affiche les détails d’un profil spécifique. (Nom de l’URL : “profile”)</p></li>
+</ul>
+<p>Les vues associées sont définies dans <cite>views.py</cite>.</p>
+</section>
+<section id="exemples-d-utilisation">
+<h3>Exemples d’utilisation :<a class="headerlink" href="#exemples-d-utilisation" title="Lien vers cette rubrique"></a></h3>
+<ul class="simple">
+<li><p>La route “” est associée à la vue <code class="docutils literal notranslate"><span class="pre">index</span></code> pour afficher la liste des profils.</p></li>
+<li><p>La route “&lt;str:username&gt;/” est associée à la vue <code class="docutils literal notranslate"><span class="pre">profile</span></code> pour afficher un
+profil spécifique.</p></li>
+</ul>
+</section>
+</section>
 </section>
 
 

@@ -2,18 +2,20 @@
 Tests des vues pour l'application de gestion des profils.
 
 Ce module contient des tests unitaires pour les vues définies dans `views.py`.
-Les tests sont réalisés à l'aide de `pytest` et `pytest-django`.
+Les tests utilisent `pytest` et `pytest-django`.
 
 Vues testées :
-- index : Teste la vue qui affiche la liste de tous les profils.
-- profile : Teste la vue qui affiche les détails d'un profil utilisateur
-spécifique.
+--------------
 
-Les tests vérifient les aspects suivants :
-- La vue `index` rend correctement la liste des profils et affiche
-les données attendues.
-- La vue `profile` affiche les détails corrects pour un utilisateur
-spécifique et gère les cas où l'utilisateur n'existe pas.
+- ``index`` : Teste la vue affichant la liste des profils.
+- ``profile`` : Teste la vue affichant les détails d'un profil utilisateur.
+
+Les tests vérifient :
+---------------------
+
+- La vue ``index`` rend la liste des profils avec les données attendues.
+- La vue ``profile`` affiche les détails corrects d'un utilisateur et gère
+  les cas d'absence de profil.
 """
 
 import pytest
@@ -24,8 +26,7 @@ from .factories import ProfileFactory
 @pytest.mark.django_db
 def test_index_view_success(client):
     """
-    Teste la vue index pour vérifier le comportement lorsque des
-    profils sont disponibles.
+    Teste la vue ``index`` lorsque des profils sont disponibles.
     """
     # Création de deux profils avec factory_boy
     ProfileFactory(user__username="testuser1", favorite_city="City1")
@@ -43,8 +44,7 @@ def test_index_view_success(client):
 @pytest.mark.django_db
 def test_index_view_no_profiles(client):
     """
-    Teste la vue index pour vérifier le comportement
-    lorsqu'aucun profil n'est disponible.
+    Teste la vue ``index`` lorsque aucun profil n'est disponible.
     """
     url_index = reverse("profiles_index")
     response_index = client.get(url_index)
@@ -58,8 +58,7 @@ def test_index_view_no_profiles(client):
 @pytest.mark.django_db
 def test_profile_view_success(client):
     """
-    Teste la vue profile pour vérifier le comportement
-    lorsque le profil est disponible.
+    Teste la vue ``profile`` lorsque le profil est disponible.
     """
     # Création d'un profil pour le test avec factory_boy
     profile = ProfileFactory(user__username="testuser", favorite_city="Test City")
@@ -75,8 +74,7 @@ def test_profile_view_success(client):
 @pytest.mark.django_db
 def test_profile_view_not_found(client):
     """
-    Teste la vue profile pour vérifier le comportement
-    lorsqu'aucun profil n'est trouvé.
+    Teste la vue ``profile`` lorsqu'aucun profil n'est trouvé.
     """
     url_profile = reverse("profile", kwargs={"username": "nonexistentuser"})
     response_profile = client.get(url_profile)

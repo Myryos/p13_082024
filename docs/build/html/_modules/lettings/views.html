@@ -81,13 +81,13 @@
              
   <h1>Code source de lettings.views</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">view.py</span>
+<span class="sd">views.py</span>
 
 <span class="sd">Ce module contient les vues pour l&#39;application de gestion des locations.</span>
 
-<span class="sd">Vues disponibles:</span>
-<span class="sd">    - lettings_index: Affiche la liste des locations.</span>
-<span class="sd">    - letting: Affiche les détails d&#39;une location spécifique.</span>
+<span class="sd">Vues disponibles :</span>
+<span class="sd">- `lettings_index` : Affiche la liste des locations.</span>
+<span class="sd">- `letting` : Affiche les détails d&#39;une location spécifique.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span><span class="p">,</span> <span class="n">get_object_or_404</span>
@@ -104,18 +104,16 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Vue pour afficher la liste des annonces de location.</span>
 
-<span class="sd">    Cette vue récupère toutes les annonces de location présentes dans</span>
-<span class="sd">    la base de données et les passe au modèle</span>
-<span class="sd">    `lettings/index.html` pour les afficher. La liste des annonces</span>
-<span class="sd">    est envoyée dans le contexte sous la clé `lettings_list`.</span>
+<span class="sd">    Récupère toutes les annonces de location de la base de données et les passe</span>
+<span class="sd">    au modèle `lettings/index.html` pour affichage. La liste des annonces est</span>
+<span class="sd">    envoyée dans le contexte sous la clé `lettings_list`.</span>
 
-<span class="sd">    Paramètres :</span>
-<span class="sd">    - request (HttpRequest) : L&#39;objet requête contenant les informations</span>
-<span class="sd">    sur la requête HTTP effectuée.</span>
+<span class="sd">    :param request: Objet requête contenant les informations HTTP.</span>
+<span class="sd">    :type request: HttpRequest</span>
 
-<span class="sd">    Retourne :</span>
-<span class="sd">    - HttpResponse : Une réponse HTTP rendue à partir du modèle</span>
-<span class="sd">    `lettings/index.html`, contenant la liste des annonces de location.</span>
+<span class="sd">    :return: Réponse HTTP rendue à partir du modèle `lettings/index.html`, avec</span>
+<span class="sd">        la liste des annonces de location.</span>
+<span class="sd">    :rtype: HttpResponse</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">lettings_list</span> <span class="o">=</span> <span class="n">Letting</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
     <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;lettings_list&quot;</span><span class="p">:</span> <span class="n">lettings_list</span><span class="p">}</span>
@@ -142,21 +140,19 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Vue pour afficher les détails d&#39;une annonce de location spécifique.</span>
 
-<span class="sd">    Cette vue récupère une annonce de location spécifique à partir</span>
-<span class="sd">    de son identifiant (`letting_id`) et passe les</span>
-<span class="sd">    détails de cette annonce au modèle `lettings/letting.html`</span>
-<span class="sd">    pour les afficher. Les informations de l&#39;annonce</span>
-<span class="sd">    sont envoyées dans le contexte sous les clés `title` et `address`.</span>
+<span class="sd">    Récupère une annonce de location par son identifiant (`letting_id`) et passe</span>
+<span class="sd">    les détails au modèle `lettings/letting.html`. Les informations sont envoyées</span>
+<span class="sd">    dans le contexte sous les clés `title` et `address`.</span>
 
-<span class="sd">    Paramètres :</span>
-<span class="sd">    - request (HttpRequest) : L&#39;objet requête contenant les informations</span>
-<span class="sd">    sur la requête HTTP effectuée.</span>
-<span class="sd">    - letting_id (int) : L&#39;identifiant de l&#39;annonce de location dont</span>
-<span class="sd">    les détails doivent être affichés.</span>
+<span class="sd">    :param request: Objet requête contenant les informations HTTP.</span>
+<span class="sd">    :type request: HttpRequest</span>
+<span class="sd">    :param letting_id: Identifiant de l&#39;annonce dont les détails doivent être</span>
+<span class="sd">        affichés.</span>
+<span class="sd">    :type letting_id: int</span>
 
-<span class="sd">    Retourne :</span>
-<span class="sd">    - HttpResponse : Une réponse HTTP rendue à partir du modèle</span>
-<span class="sd">    `lettings/letting.html`, contenant les détails de l&#39;annonce de location.</span>
+<span class="sd">    :return: Réponse HTTP rendue à partir du modèle `lettings/letting.html`, avec</span>
+<span class="sd">        les détails de l&#39;annonce.</span>
+<span class="sd">    :rtype: HttpResponse</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">letting</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Letting</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">letting_id</span><span class="p">)</span>
     <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
