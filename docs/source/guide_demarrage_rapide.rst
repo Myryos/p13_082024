@@ -9,6 +9,7 @@ Pour démarrer rapidement avec le projet, suivez ces étapes :
 3. **Lancer le serveur** :
    ```bash
    python manage.py runserver
+   ```
 4. **Vérifier le fonctionnement** en accédant à http://localhost:8000.
 
 Vous devriez voir la page d'accueil du site avec des profils et des locations.
